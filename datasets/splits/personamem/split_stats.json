@@ -1,0 +1,20 @@
+{
+  "dataset": "personamem",
+  "source": "bowen-upenn/PersonaMem-v2 (COLM 2025)",
+  "total_items": 1247,
+  "dev": 124,
+  "validation": 249,
+  "test": 874,
+  "updated_count": 1047,
+  "non_updated_count": 200,
+  "pref_types": {
+    "ask_to_forget": 1047,
+    "anti_stereotypical_pref": 48,
+    "therapy_background": 36,
+    "health_and_medical_conditions": 23,
+    "sensitive_info": 36,
+    "neutral_preferences": 29,
+    "stereotypical_pref": 28
+  },
+  "avg_turns": 3.8027265437048916
+}

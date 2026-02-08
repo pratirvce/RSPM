@@ -1,0 +1,14 @@
+{
+  "dataset": "longmemeval",
+  "source": "xiaowu0162/longmemeval-cleaned (ICLR 2025)",
+  "total_items": 211,
+  "dev": 21,
+  "validation": 42,
+  "test": 148,
+  "question_types": {
+    "temporal-reasoning": 133,
+    "knowledge-update": 78
+  },
+  "knowledge_update_count": 78,
+  "avg_turns": 24.644549763033176
+}

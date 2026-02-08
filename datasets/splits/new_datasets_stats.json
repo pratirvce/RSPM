@@ -1,0 +1,51 @@
+{
+  "longmemeval": {
+    "dataset": "longmemeval",
+    "source": "xiaowu0162/longmemeval-cleaned (ICLR 2025)",
+    "total_items": 211,
+    "dev": 21,
+    "validation": 42,
+    "test": 148,
+    "question_types": {
+      "temporal-reasoning": 133,
+      "knowledge-update": 78
+    },
+    "knowledge_update_count": 78,
+    "avg_turns": 24.644549763033176
+  },
+  "personamem": {
+    "dataset": "personamem",
+    "source": "bowen-upenn/PersonaMem-v2 (COLM 2025)",
+    "total_items": 1247,
+    "dev": 124,
+    "validation": 249,
+    "test": 874,
+    "updated_count": 1047,
+    "non_updated_count": 200,
+    "pref_types": {
+      "ask_to_forget": 1047,
+      "anti_stereotypical_pref": 48,
+      "therapy_background": 36,
+      "health_and_medical_conditions": 23,
+      "sensitive_info": 36,
+      "neutral_preferences": 29,
+      "stereotypical_pref": 28
+    },
+    "avg_turns": 3.8027265437048916
+  },
+  "memoryagentbench": {
+    "dataset": "memoryagentbench",
+    "source": "ai-hyz/MemoryAgentBench (ICLR 2026)",
+    "total_items": 860,
+    "dev": 86,
+    "validation": 172,
+    "test": 602,
+    "conflict_resolution_count": 800,
+    "accurate_retrieval_count": 60,
+    "question_types": {
+      "conflict_resolution": 800,
+      "accurate_retrieval": 60
+    },
+    "avg_turns": 1195.139534883721
+  }
+}

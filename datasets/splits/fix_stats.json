@@ -1,0 +1,31 @@
+{
+  "locomo": {
+    "total": 1542,
+    "temporal": 96,
+    "non_temporal": 1446,
+    "dev": 153,
+    "val": 308,
+    "test": 1081
+  },
+  "timebench": {
+    "total": 3400,
+    "dev": 340,
+    "val": 680,
+    "test": 2380
+  },
+  "temporal_memory": {
+    "total": 1131,
+    "dev": 113,
+    "val": 226,
+    "test": 792
+  },
+  "personamem": {
+    "fixed_queries": 0
+  },
+  "longmemeval": {
+    "capped": 10
+  },
+  "memoryagentbench": {
+    "capped": 800
+  }
+}

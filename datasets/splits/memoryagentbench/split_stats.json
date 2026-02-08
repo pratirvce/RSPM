@@ -1,0 +1,15 @@
+{
+  "dataset": "memoryagentbench",
+  "source": "ai-hyz/MemoryAgentBench (ICLR 2026)",
+  "total_items": 860,
+  "dev": 86,
+  "validation": 172,
+  "test": 602,
+  "conflict_resolution_count": 800,
+  "accurate_retrieval_count": 60,
+  "question_types": {
+    "conflict_resolution": 800,
+    "accurate_retrieval": 60
+  },
+  "avg_turns": 1195.139534883721
+}

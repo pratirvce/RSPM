@@ -45,3 +45,8 @@ local_vector_store/
 results/
 *.tmp
 *.cache
+
+# Raw datasets (too large for GitHub, only keep splits)
+datasets/longmemeval/
+datasets/memoryagentbench/
+datasets/personamem/

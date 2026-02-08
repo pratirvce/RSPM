@@ -64,6 +64,7 @@ class MemoryScopeMetrics:
         """
         TCS = Queries Answered with Latest Info / Total Queries with Conflicts
         
+        When there are no temporal conflict items, falls back to overall accuracy.
         This is the PRIMARY metric for MemoryScope.
         Target: >85% (MemoryScope baseline: 62%)
         
@@ -71,7 +72,8 @@ class MemoryScopeMetrics:
             float: TCS score between 0.0 and 1.0
         """
         if self.temporal_conflicts == 0:
-            return 0.0
+            # Fall back to overall accuracy when no conflicts present
+            return self.compute_overall_accuracy()
         return self.correct_conflicts / self.temporal_conflicts
     
     def compute_overall_accuracy(self) -> float:
