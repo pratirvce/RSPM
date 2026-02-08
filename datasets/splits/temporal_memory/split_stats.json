@@ -1,0 +1,37 @@
+{
+  "dataset": "TemporalMemoryDataset",
+  "source": "/home/prevanka/prati/su-reme/ReMe/datasets/temporal_memory_repo",
+  "total": 2121,
+  "question_types": {
+    "content_time": 177,
+    "ambiguous_last_named_day": 12,
+    "ambiguous_date_span": 180,
+    "ambiguous_month": 100,
+    "ambiguous_session_span": 258,
+    "ambiguous_rel_month": 100,
+    "ambiguous_day_span": 24,
+    "ambiguous_rel_session": 330,
+    "ambiguous_session": 294,
+    "ambiguous_rel_day": 304,
+    "ambiguous_dates": 330,
+    "ambiguous_earlier_today": 12
+  },
+  "splits": {
+    "dev": {
+      "total": 212
+    },
+    "validation": {
+      "total": 424
+    },
+    "test": {
+      "total": 1485
+    }
+  },
+  "split_ratios": {
+    "dev": 0.1,
+    "validation": 0.2,
+    "test": 0.7
+  },
+  "random_seed": 42,
+  "created": "2026-02-07T20:16:43.672409"
+}

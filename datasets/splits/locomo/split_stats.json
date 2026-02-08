@@ -1,0 +1,30 @@
+{
+  "dataset": "LoCoMo",
+  "source": "/home/prevanka/prati/su-reme/ReMe/datasets/locomo_repo/data/locomo10.json",
+  "total": 1986,
+  "conversations": 10,
+  "splits": {
+    "dev": {
+      "total": 198,
+      "temporal": 32,
+      "non_temporal": 166
+    },
+    "validation": {
+      "total": 397,
+      "temporal": 64,
+      "non_temporal": 333
+    },
+    "test": {
+      "total": 1391,
+      "temporal": 225,
+      "non_temporal": 1166
+    }
+  },
+  "split_ratios": {
+    "dev": 0.1,
+    "validation": 0.2,
+    "test": 0.7
+  },
+  "random_seed": 42,
+  "created": "2026-02-07T20:16:43.291105"
+}

@@ -1,0 +1,172 @@
+{
+  "halumem": {
+    "dataset": "HaluMem",
+    "source": "/home/prevanka/prati/su-reme/ReMe/datasets/memoryscope/halumem_medium.jsonl",
+    "total": 1387,
+    "splits": {
+      "dev": {
+        "total": 138,
+        "with_updates": 130,
+        "without_updates": 8
+      },
+      "validation": {
+        "total": 277,
+        "with_updates": 261,
+        "without_updates": 16
+      },
+      "test": {
+        "total": 972,
+        "with_updates": 914,
+        "without_updates": 58
+      }
+    },
+    "split_ratios": {
+      "dev": 0.1,
+      "validation": 0.2,
+      "test": 0.7
+    },
+    "random_seed": 42,
+    "created": "2026-02-07T20:16:43.208052"
+  },
+  "locomo": {
+    "dataset": "LoCoMo",
+    "source": "/home/prevanka/prati/su-reme/ReMe/datasets/locomo_repo/data/locomo10.json",
+    "total": 1986,
+    "conversations": 10,
+    "splits": {
+      "dev": {
+        "total": 198,
+        "temporal": 32,
+        "non_temporal": 166
+      },
+      "validation": {
+        "total": 397,
+        "temporal": 64,
+        "non_temporal": 333
+      },
+      "test": {
+        "total": 1391,
+        "temporal": 225,
+        "non_temporal": 1166
+      }
+    },
+    "split_ratios": {
+      "dev": 0.1,
+      "validation": 0.2,
+      "test": 0.7
+    },
+    "random_seed": 42,
+    "created": "2026-02-07T20:16:43.291105"
+  },
+  "timebench": {
+    "dataset": "TimeBench",
+    "source": "/home/prevanka/prati/su-reme/ReMe/datasets/timebench_repo/TimeBench-subset-7553",
+    "total": 7553,
+    "categories": {
+      "DurationQA/durationqa_f2_timebench": 687,
+      "McTaco/mctaco_f2_timebench": 851,
+      "MenatQA/menatqa_counterfactual_timebench": 200,
+      "MenatQA/menatqa_order_timebench": 200,
+      "MenatQA/menatqa_scope_timebench": 500,
+      "SituatedGen/situatedgen_timebench": 115,
+      "TRACIE/tracie_timebench": 500,
+      "TempReason/tempreason_l1_timebench": 500,
+      "TempReason/tempreason_l2_timebench": 500,
+      "TempReason/tempreason_l3_timebench": 500,
+      "TimeDial/timedial_f2_timebench": 500,
+      "TimeQA/timeqa_easy_timebench": 500,
+      "TimeQA/timeqa_hard_timebench": 500,
+      "TimeX-NLI/timexnli_cs1_timebench": 500,
+      "TimeX-NLI/timexnli_cs2_timebench": 500,
+      "TimeX-NLI/timexnli_cs3_timebench": 500
+    },
+    "splits": {
+      "dev": {
+        "total": 754,
+        "by_category": {
+          "DurationQA": 68,
+          "McTaco": 85,
+          "MenatQA": 90,
+          "SituatedGen": 11,
+          "TRACIE": 50,
+          "TempReason": 150,
+          "TimeDial": 50,
+          "TimeQA": 100,
+          "TimeX-NLI": 150
+        }
+      },
+      "validation": {
+        "total": 1511,
+        "by_category": {
+          "DurationQA": 138,
+          "McTaco": 170,
+          "MenatQA": 180,
+          "SituatedGen": 23,
+          "TRACIE": 100,
+          "TempReason": 300,
+          "TimeDial": 100,
+          "TimeQA": 200,
+          "TimeX-NLI": 300
+        }
+      },
+      "test": {
+        "total": 5288,
+        "by_category": {
+          "DurationQA": 481,
+          "McTaco": 596,
+          "MenatQA": 630,
+          "SituatedGen": 81,
+          "TRACIE": 350,
+          "TempReason": 1050,
+          "TimeDial": 350,
+          "TimeQA": 700,
+          "TimeX-NLI": 1050
+        }
+      }
+    },
+    "split_ratios": {
+      "dev": 0.1,
+      "validation": 0.2,
+      "test": 0.7
+    },
+    "random_seed": 42,
+    "created": "2026-02-07T20:16:43.396938"
+  },
+  "temporal_memory": {
+    "dataset": "TemporalMemoryDataset",
+    "source": "/home/prevanka/prati/su-reme/ReMe/datasets/temporal_memory_repo",
+    "total": 2121,
+    "question_types": {
+      "content_time": 177,
+      "ambiguous_last_named_day": 12,
+      "ambiguous_date_span": 180,
+      "ambiguous_month": 100,
+      "ambiguous_session_span": 258,
+      "ambiguous_rel_month": 100,
+      "ambiguous_day_span": 24,
+      "ambiguous_rel_session": 330,
+      "ambiguous_session": 294,
+      "ambiguous_rel_day": 304,
+      "ambiguous_dates": 330,
+      "ambiguous_earlier_today": 12
+    },
+    "splits": {
+      "dev": {
+        "total": 212
+      },
+      "validation": {
+        "total": 424
+      },
+      "test": {
+        "total": 1485
+      }
+    },
+    "split_ratios": {
+      "dev": 0.1,
+      "validation": 0.2,
+      "test": 0.7
+    },
+    "random_seed": 42,
+    "created": "2026-02-07T20:16:43.672409"
+  }
+}

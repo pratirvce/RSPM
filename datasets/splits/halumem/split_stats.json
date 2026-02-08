@@ -1,0 +1,29 @@
+{
+  "dataset": "HaluMem",
+  "source": "/home/prevanka/prati/su-reme/ReMe/datasets/memoryscope/halumem_medium.jsonl",
+  "total": 1387,
+  "splits": {
+    "dev": {
+      "total": 138,
+      "with_updates": 130,
+      "without_updates": 8
+    },
+    "validation": {
+      "total": 277,
+      "with_updates": 261,
+      "without_updates": 16
+    },
+    "test": {
+      "total": 972,
+      "with_updates": 914,
+      "without_updates": 58
+    }
+  },
+  "split_ratios": {
+    "dev": 0.1,
+    "validation": 0.2,
+    "test": 0.7
+  },
+  "random_seed": 42,
+  "created": "2026-02-07T20:16:43.208052"
+}

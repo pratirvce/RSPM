@@ -1,0 +1,74 @@
+{
+  "dataset": "TimeBench",
+  "source": "/home/prevanka/prati/su-reme/ReMe/datasets/timebench_repo/TimeBench-subset-7553",
+  "total": 7553,
+  "categories": {
+    "DurationQA/durationqa_f2_timebench": 687,
+    "McTaco/mctaco_f2_timebench": 851,
+    "MenatQA/menatqa_counterfactual_timebench": 200,
+    "MenatQA/menatqa_order_timebench": 200,
+    "MenatQA/menatqa_scope_timebench": 500,
+    "SituatedGen/situatedgen_timebench": 115,
+    "TRACIE/tracie_timebench": 500,
+    "TempReason/tempreason_l1_timebench": 500,
+    "TempReason/tempreason_l2_timebench": 500,
+    "TempReason/tempreason_l3_timebench": 500,
+    "TimeDial/timedial_f2_timebench": 500,
+    "TimeQA/timeqa_easy_timebench": 500,
+    "TimeQA/timeqa_hard_timebench": 500,
+    "TimeX-NLI/timexnli_cs1_timebench": 500,
+    "TimeX-NLI/timexnli_cs2_timebench": 500,
+    "TimeX-NLI/timexnli_cs3_timebench": 500
+  },
+  "splits": {
+    "dev": {
+      "total": 754,
+      "by_category": {
+        "DurationQA": 68,
+        "McTaco": 85,
+        "MenatQA": 90,
+        "SituatedGen": 11,
+        "TRACIE": 50,
+        "TempReason": 150,
+        "TimeDial": 50,
+        "TimeQA": 100,
+        "TimeX-NLI": 150
+      }
+    },
+    "validation": {
+      "total": 1511,
+      "by_category": {
+        "DurationQA": 138,
+        "McTaco": 170,
+        "MenatQA": 180,
+        "SituatedGen": 23,
+        "TRACIE": 100,
+        "TempReason": 300,
+        "TimeDial": 100,
+        "TimeQA": 200,
+        "TimeX-NLI": 300
+      }
+    },
+    "test": {
+      "total": 5288,
+      "by_category": {
+        "DurationQA": 481,
+        "McTaco": 596,
+        "MenatQA": 630,
+        "SituatedGen": 81,
+        "TRACIE": 350,
+        "TempReason": 1050,
+        "TimeDial": 350,
+        "TimeQA": 700,
+        "TimeX-NLI": 1050
+      }
+    }
+  },
+  "split_ratios": {
+    "dev": 0.1,
+    "validation": 0.2,
+    "test": 0.7
+  },
+  "random_seed": 42,
+  "created": "2026-02-07T20:16:43.396938"
+}
