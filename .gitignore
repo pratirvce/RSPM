@@ -1,42 +1,47 @@
-.vscode
-.env*
-.DS_Store
-.idea
+# Exclude all markdown files
+*.md
+
+# Exclude prati_docs folder and its contents
+prati_docs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
 venv/
-.ipynb_checkpoints
-.__pycache__
-__pycache__
-*.log
-tmp*
-temp*
-private*
+ENV/
+*.egg-info/
+.eggs/
 dist/
-nohup*
-cache
-log/
-.trash/
-runs
-logs
-rag_nodes_index.jsonl
-alfworld_data
-step_experiences/*
-build/*
-*.egg-info/*
-cookbook/appworld/data/*
-cookbook/appworld/experiments/*
-cookbook/appworld/exp_result/*
-file_vector_store/*
-cookbook/appworld/file_vector_store/*
-/.venv/
-site/*
-docs/_build/*
-test_compact_storage/*
-test_working_memory/*
-*.code-workspace
-local_vector_store/*
-reme_profile/*
-chroma_vector_store/*
-bench_results/*
-meta_memory/*
-*.sqlite3
-**/data/*.json
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local data
+local_vector_store/
+*.db
+*.sqlite
+
+# Environment variables (keep template)
+.env
+
+# Results and temporary files
+results/
+*.tmp
+*.cache

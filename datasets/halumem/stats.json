@@ -1,0 +1,25 @@
+{
+  "name": "HaluMem",
+  "source": "GitHub",
+  "repo": "MemTensor/HaluMem",
+  "files_downloaded": [
+    "eli5_messages.jsonl",
+    "native_math_messages_sample.jsonl",
+    "self_gene_unrelated_qa.jsonl",
+    "stage0_persona.jsonl",
+    "stage1_1_fixed.jsonl",
+    "stage1_2_dynamic.jsonl",
+    "stage1_3_preferences.jsonl",
+    "stage2_1_extend_dynamic.jsonl",
+    "stage2_2_extend_preference.jsonl",
+    "stage2_3_profile2skeleton.jsonl",
+    "stage3_1_narrative_arc.jsonl",
+    "stage3_2_preference_events.jsonl",
+    "stage3_3_init_events.jsonl",
+    "stage3_4_merged_events.jsonl",
+    "stage4_1_events2memories.jsonl",
+    "stage5_1_dialogue_generation.jsonl",
+    "stage5_2_token_calculation.jsonl"
+  ],
+  "download_status": "success"
+}
