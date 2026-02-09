@@ -1,0 +1,32 @@
+{
+  "atoke": {
+    "total": 5513,
+    "dev": 551,
+    "val": 1102,
+    "test": 3860
+  },
+  "memtrack": {
+    "total": 143,
+    "dev": 14,
+    "val": 28,
+    "test": 101
+  },
+  "dynaquest": {
+    "total": 20,
+    "dev": 2,
+    "val": 4,
+    "test": 14
+  },
+  "fifa_synth": {
+    "total": 24,
+    "dev": 2,
+    "val": 4,
+    "test": 18
+  },
+  "reviseqa_synth": {
+    "total": 48,
+    "dev": 4,
+    "val": 9,
+    "test": 35
+  }
+}

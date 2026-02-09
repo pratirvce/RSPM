@@ -1,0 +1,47 @@
+{
+  "experiment": "DeepSeek-Chat LLM Answer Generation",
+  "date": "2026-02-08",
+  "model": "deepseek-chat (DeepSeek-V3) for answer generation",
+  "method": "RSPM-LLM: TF-IDF retrieval -> DeepSeek-chat answer generation",
+  "description": "After TF-IDF retrieval, uses DeepSeek-chat to generate concise answers from retrieved context. Improves factoid QA but hurts content-overlap evaluation.",
+  "config": {
+    "sleep_frequency": 99999,
+    "enable_hierarchical": false,
+    "enable_reranking": true,
+    "enable_llm_generation": true,
+    "llm_model": "deepseek-chat",
+    "memory_store": "local_tfidf"
+  },
+  "evaluation": {
+    "items_per_split": 20,
+    "splits": ["dev", "validation", "test"],
+    "total_items": 420,
+    "total_time_seconds": 268
+  },
+  "per_dataset_results": {
+    "halumem": {"avg_tcs": 100.0, "avg_accuracy": 100.0, "total_correct": 60, "total_items": 60, "status": "PASS"},
+    "personamem": {"avg_tcs": 100.0, "avg_accuracy": 88.3, "total_correct": 53, "total_items": 60, "status": "PASS"},
+    "longmemeval": {"avg_tcs": 54.2, "avg_accuracy": 40.0, "total_correct": 24, "total_items": 60, "status": "FAIL"},
+    "memoryagentbench": {"avg_tcs": 40.0, "avg_accuracy": 40.0, "total_correct": 24, "total_items": 60, "status": "FAIL"},
+    "timebench": {"avg_tcs": 30.0, "avg_accuracy": 30.0, "total_correct": 18, "total_items": 60, "status": "FAIL"},
+    "locomo": {"avg_tcs": 25.0, "avg_accuracy": 25.0, "total_correct": 15, "total_items": 60, "status": "FAIL"},
+    "temporal_memory": {"avg_tcs": 0.0, "avg_accuracy": 0.0, "total_correct": 0, "total_items": 60, "status": "FAIL"}
+  },
+  "overall": {
+    "avg_tcs": 49.9,
+    "avg_accuracy": 46.2,
+    "total_correct": 194,
+    "total_items": 420,
+    "datasets_passing": 2,
+    "datasets_total": 7
+  },
+  "comparison_vs_baseline": {
+    "halumem": "+2.0% TCS (98.0 -> 100.0) IMPROVED",
+    "personamem": "+0.0% TCS (100.0 -> 100.0) SAME",
+    "timebench": "-41.7% TCS (71.7 -> 30.0) WORSE - LLM rephrases, loses exact match",
+    "longmemeval": "-9.7% TCS (63.9 -> 54.2) WORSE - concise answers lose word overlap",
+    "memoryagentbench": "+0.0% TCS (40.0 -> 40.0) SAME",
+    "locomo": "+0.0% TCS (25.0 -> 25.0) SAME",
+    "temporal_memory": "-16.7% TCS (16.7 -> 0.0) WORSE - summary loses content overlap"
+  }
+}

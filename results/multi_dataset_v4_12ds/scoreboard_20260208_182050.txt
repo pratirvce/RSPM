@@ -1,0 +1,47 @@
+RSPM Multi-Dataset Evaluation Scoreboard (v4 - 12 Datasets)
+==========================================================================================
+Date: 2026-02-08 18:20:50
+Total Time: 376s
+
+Dataset            Split        Config            Items      TCS   Accuracy   Goal
+--------------------------------------------------------------------------------
+halumem            dev          RSPM-LLM             20  100.0%    100.0%   PASS
+halumem            validation   RSPM-LLM             20   94.1%     95.0%   FAIL
+halumem            test         RSPM-LLM             20  100.0%    100.0%   PASS
+locomo             dev          RSPM-LLM             20   25.0%     25.0%   FAIL
+locomo             validation   RSPM-LLM             20   25.0%     25.0%   FAIL
+locomo             test         RSPM-LLM             20   25.0%     25.0%   FAIL
+timebench          dev          RSPM-LLM             20   70.0%     70.0%   FAIL
+timebench          validation   RSPM-LLM             20   75.0%     75.0%   FAIL
+timebench          test         RSPM-LLM             20   70.0%     70.0%   FAIL
+temporal_memory    dev          RSPM-LLM             20   25.0%     25.0%   FAIL
+temporal_memory    validation   RSPM-LLM             20    0.0%      0.0%   FAIL
+temporal_memory    test         RSPM-LLM             20    0.0%      0.0%   FAIL
+longmemeval        dev          RSPM-LLM             20   83.3%     75.0%   FAIL
+longmemeval        validation   RSPM-LLM             20  100.0%     90.0%   PASS
+longmemeval        test         RSPM-LLM             20   66.7%     70.0%   FAIL
+personamem         dev          RSPM-LLM             20  100.0%     85.0%   PASS
+personamem         validation   RSPM-LLM             20  100.0%     95.0%   PASS
+personamem         test         RSPM-LLM             20  100.0%     95.0%   PASS
+memoryagentbench   dev          RSPM-LLM             20   50.0%     50.0%   FAIL
+memoryagentbench   validation   RSPM-LLM             20   30.0%     30.0%   FAIL
+memoryagentbench   test         RSPM-LLM             20   40.0%     40.0%   FAIL
+atoke              dev          RSPM-LLM             20   92.9%     95.0%   FAIL
+atoke              validation   RSPM-LLM             20   93.3%     95.0%   FAIL
+atoke              test         RSPM-LLM             20  100.0%     95.0%   PASS
+memtrack           dev          RSPM-LLM             14  100.0%    100.0%   PASS
+memtrack           validation   RSPM-LLM             20   65.0%     65.0%   FAIL
+memtrack           test         RSPM-LLM             20   90.0%     90.0%   FAIL
+dynaquest          dev          RSPM-LLM              2   50.0%     50.0%   FAIL
+dynaquest          validation   RSPM-LLM              4   33.3%     50.0%   FAIL
+dynaquest          test         RSPM-LLM             14   36.4%     28.6%   FAIL
+fifa_synth         dev          RSPM-LLM              2   50.0%     50.0%   FAIL
+fifa_synth         validation   RSPM-LLM              4    0.0%     75.0%   FAIL
+fifa_synth         test         RSPM-LLM             18   66.7%     66.7%   FAIL
+reviseqa_synth     dev          RSPM-LLM              4  100.0%    100.0%   PASS
+reviseqa_synth     validation   RSPM-LLM              9   88.9%     88.9%   FAIL
+reviseqa_synth     test         RSPM-LLM             20   92.9%     93.3%   FAIL
+
+================================================================================
+OVERALL: Avg TCS = 65.0% | Avg Accuracy = 66.2%
+Goal (>95%): NOT YET

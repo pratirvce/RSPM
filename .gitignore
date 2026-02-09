@@ -41,8 +41,7 @@ local_vector_store/
 # Environment variables (keep template)
 .env
 
-# Results and temporary files
-results/
+# Temporary files
 *.tmp
 *.cache
 
@@ -50,3 +49,6 @@ results/
 datasets/longmemeval/
 datasets/memoryagentbench/
 datasets/personamem/
+datasets/atoke_repo/
+datasets/dynaquest_repo/
+datasets/memtrack/

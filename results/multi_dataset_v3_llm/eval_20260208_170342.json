@@ -1,0 +1,641 @@
+{
+  "timestamp": "20260208_170342",
+  "version": "v2_fixed_evaluators",
+  "start_time": "2026-02-08T17:03:42.288261",
+  "total_elapsed_seconds": 262.3,
+  "configuration": {
+    "reme_url": "http://localhost:8002",
+    "max_workers": 5,
+    "limits": {
+      "dev": 20,
+      "validation": 20,
+      "test": 20
+    },
+    "splits": [
+      "dev",
+      "validation",
+      "test"
+    ],
+    "datasets": [
+      "halumem",
+      "locomo",
+      "timebench",
+      "temporal_memory",
+      "longmemeval",
+      "personamem",
+      "memoryagentbench"
+    ],
+    "rspm_configs": [
+      "RSPM-LLM"
+    ]
+  },
+  "detailed_results": [
+    {
+      "dataset": "halumem",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.4,
+      "items_per_second": 1.92,
+      "tcs": 0.95,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 19
+    },
+    {
+      "dataset": "halumem",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.6,
+      "items_per_second": 1.89,
+      "tcs": 0.9411764705882353,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 16
+    },
+    {
+      "dataset": "halumem",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.0,
+      "items_per_second": 2.0,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 20,
+      "incorrect": 0,
+      "temporal_conflicts": 19,
+      "correct_conflicts": 19
+    },
+    {
+      "dataset": "locomo",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 8.9,
+      "items_per_second": 2.24,
+      "tcs": 0.25,
+      "overall_accuracy": 0.25,
+      "correct": 5,
+      "incorrect": 15,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "locomo",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.2,
+      "items_per_second": 1.95,
+      "tcs": 0.3,
+      "overall_accuracy": 0.3,
+      "correct": 6,
+      "incorrect": 14,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "locomo",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 8.0,
+      "items_per_second": 2.51,
+      "tcs": 0.25,
+      "overall_accuracy": 0.25,
+      "correct": 5,
+      "incorrect": 15,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 13.0,
+      "items_per_second": 1.54,
+      "tcs": 0.7,
+      "overall_accuracy": 0.7,
+      "correct": 14,
+      "incorrect": 6,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.5,
+      "items_per_second": 1.91,
+      "tcs": 0.8,
+      "overall_accuracy": 0.8,
+      "correct": 16,
+      "incorrect": 4,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 11.2,
+      "items_per_second": 1.78,
+      "tcs": 0.7,
+      "overall_accuracy": 0.7,
+      "correct": 14,
+      "incorrect": 6,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.3,
+      "items_per_second": 1.95,
+      "tcs": 0.15,
+      "overall_accuracy": 0.15,
+      "correct": 3,
+      "incorrect": 17,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 9.7,
+      "items_per_second": 2.06,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 20,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.4,
+      "items_per_second": 1.91,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 20,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "longmemeval",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 11.1,
+      "items_per_second": 1.8,
+      "tcs": 0.8333333333333334,
+      "overall_accuracy": 0.75,
+      "correct": 15,
+      "incorrect": 5,
+      "temporal_conflicts": 6,
+      "correct_conflicts": 5
+    },
+    {
+      "dataset": "longmemeval",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.6,
+      "items_per_second": 1.89,
+      "tcs": 1.0,
+      "overall_accuracy": 0.9,
+      "correct": 18,
+      "incorrect": 2,
+      "temporal_conflicts": 8,
+      "correct_conflicts": 8
+    },
+    {
+      "dataset": "longmemeval",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.4,
+      "items_per_second": 1.93,
+      "tcs": 0.6666666666666666,
+      "overall_accuracy": 0.7,
+      "correct": 14,
+      "incorrect": 6,
+      "temporal_conflicts": 6,
+      "correct_conflicts": 4
+    },
+    {
+      "dataset": "personamem",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 11.4,
+      "items_per_second": 1.75,
+      "tcs": 1.0,
+      "overall_accuracy": 0.9,
+      "correct": 18,
+      "incorrect": 2,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 17
+    },
+    {
+      "dataset": "personamem",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.4,
+      "items_per_second": 1.91,
+      "tcs": 1.0,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 19,
+      "correct_conflicts": 19
+    },
+    {
+      "dataset": "personamem",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 10.4,
+      "items_per_second": 1.93,
+      "tcs": 1.0,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 17
+    },
+    {
+      "dataset": "memoryagentbench",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 24.2,
+      "items_per_second": 0.83,
+      "tcs": 0.55,
+      "overall_accuracy": 0.55,
+      "correct": 11,
+      "incorrect": 9,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 11
+    },
+    {
+      "dataset": "memoryagentbench",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 27.3,
+      "items_per_second": 0.73,
+      "tcs": 0.3,
+      "overall_accuracy": 0.3,
+      "correct": 6,
+      "incorrect": 14,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 6
+    },
+    {
+      "dataset": "memoryagentbench",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 19.3,
+      "items_per_second": 1.04,
+      "tcs": 0.5,
+      "overall_accuracy": 0.5,
+      "correct": 10,
+      "incorrect": 10,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 10
+    }
+  ],
+  "dataset_summaries": {
+    "halumem": {
+      "avg_tcs": 0.9637254901960784,
+      "avg_accuracy": 0.9666666666666667,
+      "total_items": 60,
+      "total_correct": 58,
+      "num_evals": 3
+    },
+    "locomo": {
+      "avg_tcs": 0.26666666666666666,
+      "avg_accuracy": 0.26666666666666666,
+      "total_items": 60,
+      "total_correct": 16,
+      "num_evals": 3
+    },
+    "timebench": {
+      "avg_tcs": 0.7333333333333334,
+      "avg_accuracy": 0.7333333333333334,
+      "total_items": 60,
+      "total_correct": 44,
+      "num_evals": 3
+    },
+    "temporal_memory": {
+      "avg_tcs": 0.049999999999999996,
+      "avg_accuracy": 0.049999999999999996,
+      "total_items": 60,
+      "total_correct": 3,
+      "num_evals": 3
+    },
+    "longmemeval": {
+      "avg_tcs": 0.8333333333333334,
+      "avg_accuracy": 0.7833333333333333,
+      "total_items": 60,
+      "total_correct": 47,
+      "num_evals": 3
+    },
+    "personamem": {
+      "avg_tcs": 1.0,
+      "avg_accuracy": 0.9333333333333332,
+      "total_items": 60,
+      "total_correct": 56,
+      "num_evals": 3
+    },
+    "memoryagentbench": {
+      "avg_tcs": 0.45,
+      "avg_accuracy": 0.45,
+      "total_items": 60,
+      "total_correct": 27,
+      "num_evals": 3
+    }
+  },
+  "config_summaries": {
+    "RSPM-LLM": {
+      "avg_tcs": 0.6138655462184873,
+      "avg_accuracy": 0.5976190476190476,
+      "total_items": 420,
+      "num_evals": 21
+    }
+  },
+  "overall": {
+    "avg_tcs": 0.6138655462184873,
+    "avg_accuracy": 0.5976190476190476,
+    "total_items": 420,
+    "total_correct": 251,
+    "goal_achieved": false
+  },
+  "diagnostic_logs": {
+    "halumem": [
+      {
+        "idx": 1,
+        "query": "N/A",
+        "gt_answer": "[{'from': \"Barbara Jones's employment status is employed\", 'to': 'Barbara Jones\\'s career_status upd",
+        "response": "Based on the memory context, the individual is expressing gratitude for encouragement and states they will continue exploring opportunities focused on heart health research.\n\nThank you for the encouragement. I'll continue to explore opportunities and focus on roles that align with my passion for hea",
+        "correct": true,
+        "detail": ""
+      },
+      {
+        "idx": 2,
+        "query": "N/A",
+        "gt_answer": "[{'from': 'Travel styles I like: Cultural city tours', 'to': \"Christopher's travel preference change",
+        "response": "Based on the memory context, the most recent and complete goodbye message is: \"Goodbye for now, Christopher. Wishing you all the best in your travels and community endeavors...\"\n\nGoodbye for now!\nGoodbye for now!\nGoodbye for now!\nThank you! Goodbye for now.\nGoodbye for now, Christopher. Wishing you ",
+        "correct": true,
+        "detail": ""
+      },
+      {
+        "idx": 0,
+        "query": "N/A",
+        "gt_answer": "[{'from': 'Promotion achieved, enabling strategic influence within the company.', 'to': 'Sharon Brow",
+        "response": "Based on the memory context, this balance is supported by a structured routine of exercise, diet, and mindfulness practices, which helps you stay focused and energized to inspire young athletes at your sports academy.\n\nThis balance will help me grow personally and professionally, enabling me to insp",
+        "correct": true,
+        "detail": ""
+      }
+    ],
+    "locomo": [
+      {
+        "idx": 0,
+        "query": "What is John's favorite book series?",
+        "gt_answer": "Harry Potter",
+        "response": "Based on the memory context, John's favorite book series is Harry Potter.\n\nHarry Potter is my favorite book. It's so immersive!\nCool! Glad you're enjoying that book! Do you have any favorite fantasy movies as well? These are mine.\nDefinitely Star Wars! It's my favorite and never gets old. What about",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 3,
+        "query": "What exercises has John done?",
+        "gt_answer": "Weight training, Circuit training, Kickboxing, yoga",
+        "response": "Based ONLY on the provided memory context, John has mentioned doing kickboxing.\n\nHey John, I'm doing ok - hope you are too. Some interesting stuff has been going on; last week I dropped off that stuff I baked at the homeless shelter. It was great and I'm more motivated than ever to help people.\nNo p",
+        "correct": false,
+        "detail": "no_match(1/5)"
+      },
+      {
+        "idx": 2,
+        "query": "What is Jon offering to the dancers at his dance studio?",
+        "gt_answer": "One-on-one mentoring and training",
+        "response": "Based on the memory context, Jon is offering one-on-one mentoring and training to help dancers reach their full potential.\n\nShure, I will send it to you later. Starting this studio isn't just a business, it's a place for dancers to grow. What support are you offering them?\nThanks, Gina! It's been so",
+        "correct": true,
+        "detail": "exact_substring"
+      }
+    ],
+    "timebench": [
+      {
+        "idx": 1,
+        "query": "Which employer did Kevin Anderson work for before University of Maryland?",
+        "gt_answer": "['United States Military Academy']",
+        "response": "Based solely on the provided context, Kevin Anderson worked for the United States Military Academy as the athletic director for the Army Black Knights immediately before becoming the athletic director at the University of Maryland.\n\nContext: Kevin Anderson (athletic director)Kevin Bruce Anderson (bo",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 0,
+        "query": "What was the position of Angela Eagle from 2009 to 2011?",
+        "gt_answer": "['unanswerable']",
+        "response": "From June 2009 to May 2010, Angela Eagle was the Minister of State for Pensions and Ageing Society. In October 2010, she was elected to the Shadow Cabinet as Shadow Chief Secretary to the Treasury.\n\nContext: ['Eagle was elected to the Shadow Cabinet in October 2010 and was appointed by Ed Miliband t",
+        "correct": false,
+        "detail": "no_answers"
+      },
+      {
+        "idx": 4,
+        "query": "Which country did 6th Combined Arms Army belong to from 1945 to 1990?",
+        "gt_answer": "['Soviet']",
+        "response": "Based on the memory context, the 6th Army was a field army of the Soviet Red Army and was active with the Russian Ground Forces until 1998. Therefore, from 1945 to 1990, it belonged to the Soviet Union.\n\nContext: [' It appears to have been reformed in 2010 . Soviet,The 6th Army was a field army of t",
+        "correct": true,
+        "detail": "exact_substring"
+      }
+    ],
+    "temporal_memory": [
+      {
+        "idx": 1,
+        "query": "What did we chat about on April 18th?",
+        "gt_answer": "Hey Maria, hope you're doing okay. Since we chatted last, I've been blogging about politics and the ",
+        "response": "Based on the provided memory context, we did not chat about anything on April 18th. The context is solely a biographical summary of Vincent van Gogh.\n\nHere is a summary of his biography that was described on the podcast: Vincent Willem van Gogh (30 March 1853 - 29 July 1890) was a Dutch Post-Impress",
+        "correct": false,
+        "detail": "content_overlap(7/66)"
+      },
+      {
+        "idx": 0,
+        "query": "What did we chat about on October 6th?",
+        "gt_answer": "Hey Evan, long time no see! I've started eating healthier - what's new with you? Picked up any new h",
+        "response": "Based on the provided memory context, we did not chat about anything on October 6th. The context only contains a biographical summary of Vincent van Gogh.\n\nHere is a summary of his biography that was described on the podcast: Vincent Willem van Gogh (30 March 1853 - 29 July 1890) was a Dutch Post-Im",
+        "correct": true,
+        "detail": "content_overlap(15/43)"
+      },
+      {
+        "idx": 3,
+        "query": "What did we discuss 9 sessions ago?",
+        "gt_answer": "Hi Audrey! Been a while since I hear from you. How's it been? Hey Andrew! It's been a wild ride! I d",
+        "response": "Based solely on the provided memory context, we cannot determine what was discussed 9 sessions ago. The context only contains a biographical summary of Vincent van Gogh from a single podcast.\n\nHere is a summary of his biography that was described on the podcast: Vincent Willem van Gogh (30 March 185",
+        "correct": false,
+        "detail": "content_overlap(7/28)"
+      }
+    ],
+    "longmemeval": [
+      {
+        "idx": 4,
+        "query": "What was the airline that I flied with on Valentine's day?",
+        "gt_answer": "American Airlines",
+        "response": "The provided memory context does not contain any information about which airline you flew with on Valentine's Day.\n\nThe Hyatt Regency Miami Airport is a great choice, and their shuttle service to the Port of Miami cruise terminal can be a convenient perk. Here's what I found out about their shuttle ",
+        "correct": true,
+        "detail": "word_match(1/2)"
+      },
+      {
+        "idx": 2,
+        "query": "What was my personal best time in the charity 5K run?",
+        "gt_answer": "25 minutes and 50 seconds (or 25:50)",
+        "response": "Your personal best time in the charity 5K run is 25:50.\n\nI'm training for another charity 5K run coming up and I was wondering if you could give me some tips on how to improve my endurance. By the way, I'm hoping to beat my personal best time of 25:50 this time around.\nCongratulations on your upcomi",
+        "correct": true,
+        "detail": "word_match(2/4)"
+      },
+      {
+        "idx": 0,
+        "query": "Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?",
+        "gt_answer": "Receiving the new phone case",
+        "response": "The provided memory context does not contain any information about the narrator losing a phone charger or receiving a new phone case.\n\nJetBlue is a great choice for this route, and I'd be happy to provide more information about their seat selection process, amenities, and in-flight entertainment sys",
+        "correct": true,
+        "detail": "word_match(4/4)"
+      }
+    ],
+    "personamem": [
+      {
+        "idx": 3,
+        "query": "Can you suggest some interesting places in the city where I could meet new people and have engaging conversations in a relaxed setting?",
+        "gt_answer": "You might enjoy heading to The Thistle Inn or Havana Bar, both known for their warm atmosphere and c",
+        "response": "Based on the memory context, I can suggest seeking out supportive communities or groups with shared interests, as spending consistent time in such settings can help ease feelings of emptiness by fostering connection.\n\nUnderstood \u2014 I\u2019ll set aside anything you\u2019ve previously shared about grief or your ",
+        "correct": false,
+        "detail": "no_match(7/46)"
+      },
+      {
+        "idx": 1,
+        "query": "How can I navigate important life decisions when the person I always turned to for guidance and comfort is no longer here?",
+        "gt_answer": "It\u2019s natural to feel uncertain when the person you used to rely on for advice isn\u2019t there anymore. Y",
+        "response": "Based on the latest context, you can navigate decisions by reconnecting with your purpose and values, seeking supportive connections from communities like friends, and considering speaking with a mental health professional for tailored guidance.\n\nGot it \u2014 I\u2019ll no longer retain or refer to the fact t",
+        "correct": true,
+        "detail": "no_diff_words"
+      },
+      {
+        "idx": 4,
+        "query": "What are some relaxing hobbies I could try that are good for winding down in the evenings?",
+        "gt_answer": "You might enjoy quiet, tactile activities that engage the mind gently, like intricate jigsaw puzzles",
+        "response": "Based on the memory context, you could try creative expression like painting or poetry, which was suggested for exploring feelings. The context also mentions trying a new hobby or skill as a way to stimulate engagement.\n\nWhat are some good websites or apps I can check regularly to stay updated on th",
+        "correct": false,
+        "detail": "no_match(7/35)"
+      }
+    ],
+    "memoryagentbench": [
+      {
+        "idx": 2,
+        "query": "Who was Malvolio created by?",
+        "gt_answer": "William Shakespeare",
+        "response": "Based on the provided memory context, Malvolio was created by William Shakespeare.\n\nMalvolio was created by William Shakespeare.\nMalvolio was created by William Shakespeare.\nGrinch was created by Dr. Seuss.\nPiccolo was created by Akira Toriyama.\nPeyton Place was created in the country of United Stat",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 3,
+        "query": "Which sport is Surrey Senior Cup associated with?",
+        "gt_answer": "basketball",
+        "response": "Based on the memory context, the Surrey Senior Cup is associated with the sport of association football.\n\nSurrey Senior Cup is associated with the sport of association football.\nSurrey Senior Cup is associated with the sport of basketball.\nSurrey Senior Cup is associated with the sport of associatio",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 0,
+        "query": "Which city did Abraham Ortelius work in?",
+        "gt_answer": "Berlin",
+        "response": "Based ONLY on the provided memory context, there is no information about which city Abraham Ortelius worked in.\n\nDante Gabriel Rossetti worked in the city of London.\nCharles Dana Gibson worked in the city of New York City.\nRisto Ryti worked in the city of Helsinki.\nBob Dylan worked in the city of Ne",
+        "correct": false,
+        "detail": "no_answers"
+      }
+    ]
+  }
+}

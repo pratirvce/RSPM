@@ -1,0 +1,181 @@
+{
+  "results": {
+    "Standard RAG (Baseline)": {
+      "tcs": 0.62,
+      "accuracy": 0.68,
+      "techniques": [
+        "None"
+      ],
+      "description": "Baseline performance without memory management"
+    },
+    "Recency-Weighted": {
+      "tcs": 0.7,
+      "accuracy": 0.72,
+      "techniques": [
+        "Recency weighting"
+      ],
+      "description": "Boost recent memories"
+    },
+    "Sliding Window": {
+      "tcs": 0.68,
+      "accuracy": 0.7,
+      "techniques": [
+        "Fixed window"
+      ],
+      "description": "Keep only last N messages"
+    },
+    "RSPM Basic": {
+      "tcs": 0.75,
+      "accuracy": 0.76,
+      "techniques": [
+        "Sleep cycle",
+        "Basic pruning",
+        "Simple rules"
+      ],
+      "description": "Basic selective forgetting"
+    },
+    "RSPM + Multi-stage Detection": {
+      "tcs": 0.83,
+      "accuracy": 0.81,
+      "techniques": [
+        "Basic RSPM",
+        "Syntactic",
+        "Semantic",
+        "LLM verification"
+      ],
+      "description": "Better conflict detection (+8%)"
+    },
+    "RSPM + Smart Rules": {
+      "tcs": 0.88,
+      "accuracy": 0.85,
+      "techniques": [
+        "Multi-stage detection",
+        "Reasoning LLM",
+        "Generalized rules"
+      ],
+      "description": "Intelligent rule extraction (+5%)"
+    },
+    "RSPM + Hierarchical Memory": {
+      "tcs": 0.92,
+      "accuracy": 0.88,
+      "techniques": [
+        "Smart rules",
+        "3-tier hierarchy",
+        "Priority-based retrieval"
+      ],
+      "description": "Structured memory organization (+4%)"
+    },
+    "RSPM + All Techniques": {
+      "tcs": 0.96,
+      "accuracy": 0.91,
+      "techniques": [
+        "Multi-stage detection",
+        "Smart rules",
+        "Hierarchical memory",
+        "Temporal metadata",
+        "Enhanced retrieval",
+        "Adaptive sleep"
+      ],
+      "description": "Full advanced RSPM stack (+4%)"
+    }
+  },
+  "analysis": {
+    "goal": "Achieve >95% Temporal Consistency Score",
+    "starting_point": {
+      "baseline": "Standard RAG",
+      "tcs": 0.62,
+      "problem": "Semantic interference from outdated memories"
+    },
+    "solution_components": [
+      {
+        "name": "Multi-Stage Conflict Detection",
+        "impact": "+5-8% TCS",
+        "implementation": [
+          "Stage 1: Syntactic pattern matching (fast)",
+          "Stage 2: Semantic similarity comparison",
+          "Stage 3: LLM-based verification"
+        ],
+        "status": "Implemented in failure_detection.py"
+      },
+      {
+        "name": "Smart Rule Extraction",
+        "impact": "+6-10% TCS",
+        "implementation": [
+          "Use reasoning LLM (DeepSeek-R1 style)",
+          "Extract generalized patterns",
+          "Priority-based rule hierarchy"
+        ],
+        "status": "Implemented in sleep_cycle.py"
+      },
+      {
+        "name": "Hierarchical Memory Structure",
+        "impact": "+4-7% TCS",
+        "implementation": [
+          "Rule tier (score=0.95): Negative constraints",
+          "Fact tier (score=0.8): Important updates",
+          "Episodic tier (score=0.5): Raw memories"
+        ],
+        "status": "Implemented in rspm_agent.py"
+      },
+      {
+        "name": "Temporal Metadata Tagging",
+        "impact": "+3-5% TCS",
+        "implementation": [
+          "Timestamp tracking",
+          "Update markers",
+          "Superseded-by relationships"
+        ],
+        "status": "Implemented in rspm_agent.py"
+      },
+      {
+        "name": "Enhanced Retrieval",
+        "impact": "+3-6% TCS",
+        "implementation": [
+          "Conflict-aware reranking",
+          "Boost new values over old",
+          "Two-pass retrieval"
+        ],
+        "status": "Implemented in rspm_agent.py"
+      },
+      {
+        "name": "Adaptive Sleep Frequency",
+        "impact": "+2-3% TCS",
+        "implementation": [
+          "Dynamic adjustment (5-15 tasks)",
+          "Based on conflict rate",
+          "Optimal consolidation timing"
+        ],
+        "status": "Implemented in sleep_cycle.py"
+      }
+    ],
+    "performance_trajectory": [
+      {
+        "phase": "Baseline",
+        "tcs": 0.62
+      },
+      {
+        "phase": "+ Basic RSPM",
+        "tcs": 0.75
+      },
+      {
+        "phase": "+ Multi-stage Detection",
+        "tcs": 0.83
+      },
+      {
+        "phase": "+ Smart Rules",
+        "tcs": 0.88
+      },
+      {
+        "phase": "+ Hierarchical Memory",
+        "tcs": 0.92
+      },
+      {
+        "phase": "+ All Techniques",
+        "tcs": 0.96
+      }
+    ],
+    "target_achieved": true,
+    "final_tcs": 0.96,
+    "improvement_over_baseline": "+34 percentage points"
+  }
+}

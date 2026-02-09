@@ -1,0 +1,32 @@
+RSPM Multi-Dataset Evaluation Scoreboard
+==========================================================================================
+Date: 2026-02-08 04:08:40
+Total Time: 13587s
+
+Dataset            Split        Config            Items      TCS   Accuracy   Goal
+--------------------------------------------------------------------------------
+halumem            dev          RSPM-Basic           20  100.0%    100.0%   PASS
+halumem            validation   RSPM-Basic           20  100.0%    100.0%   PASS
+halumem            test         RSPM-Basic           20  100.0%    100.0%   PASS
+locomo             dev          RSPM-Basic           20    0.0%      0.0%   FAIL
+locomo             validation   RSPM-Basic           20    0.0%      0.0%   FAIL
+locomo             test         RSPM-Basic           20    0.0%      0.0%   FAIL
+timebench          dev          RSPM-Basic           20    0.0%      0.0%   FAIL
+timebench          validation   RSPM-Basic           20    0.0%      0.0%   FAIL
+timebench          test         RSPM-Basic           20    0.0%      0.0%   FAIL
+temporal_memory    dev          RSPM-Basic           20    0.0%      0.0%   FAIL
+temporal_memory    validation   RSPM-Basic           20    0.0%      0.0%   FAIL
+temporal_memory    test         RSPM-Basic           20    0.0%      0.0%   FAIL
+longmemeval        dev          RSPM-Basic           20    0.0%      0.0%   FAIL
+longmemeval        validation   RSPM-Basic           20    0.0%      0.0%   FAIL
+longmemeval        test         RSPM-Basic           20    0.0%      0.0%   FAIL
+personamem         dev          RSPM-Basic           20    0.0%      0.0%   FAIL
+personamem         validation   RSPM-Basic           20    0.0%      0.0%   FAIL
+personamem         test         RSPM-Basic           20    0.0%      0.0%   FAIL
+memoryagentbench   dev          RSPM-Basic           20    0.0%      0.0%   FAIL
+memoryagentbench   validation   RSPM-Basic           20    0.0%      0.0%   FAIL
+memoryagentbench   test         RSPM-Basic           20    0.0%      0.0%   FAIL
+
+================================================================================
+OVERALL: Avg TCS = 14.3% | Avg Accuracy = 14.3%
+Goal (>95%): NOT YET

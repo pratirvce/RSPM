@@ -1,0 +1,287 @@
+{
+  "timestamp": "20260207_234711",
+  "start_time": "2026-02-07T23:47:11.798771",
+  "total_elapsed_seconds": 7544.0,
+  "configuration": {
+    "reme_url": "http://localhost:8002",
+    "max_workers": 5,
+    "limits": {
+      "dev": 20,
+      "validation": 20,
+      "test": 20
+    },
+    "splits": [
+      "dev",
+      "validation",
+      "test"
+    ],
+    "datasets": [
+      "halumem",
+      "locomo",
+      "timebench",
+      "temporal_memory"
+    ],
+    "rspm_configs": [
+      "RSPM-Basic"
+    ]
+  },
+  "detailed_results": [
+    {
+      "dataset": "halumem",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 724.0,
+      "items_per_second": 0.03,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 20,
+      "incorrect": 0,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 20
+    },
+    {
+      "dataset": "halumem",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 630.9,
+      "items_per_second": 0.03,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 20,
+      "incorrect": 0,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 17
+    },
+    {
+      "dataset": "halumem",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 564.8,
+      "items_per_second": 0.04,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 20,
+      "incorrect": 0,
+      "temporal_conflicts": 19,
+      "correct_conflicts": 19
+    },
+    {
+      "dataset": "locomo",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 763.1,
+      "items_per_second": 0.03,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 20,
+      "temporal_conflicts": 4,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "locomo",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 750.7,
+      "items_per_second": 0.03,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 20,
+      "temporal_conflicts": 5,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "locomo",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 794.2,
+      "items_per_second": 0.03,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 20,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 18,
+      "errors": 2,
+      "error_samples": [
+        "'list' object has no attribute 'lower'",
+        "'list' object has no attribute 'lower'"
+      ],
+      "elapsed_seconds": 552.4,
+      "items_per_second": 0.04,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 18,
+      "temporal_conflicts": 18,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 16,
+      "errors": 4,
+      "error_samples": [
+        "'list' object has no attribute 'lower'",
+        "'list' object has no attribute 'lower'",
+        "'list' object has no attribute 'lower'",
+        "'list' object has no attribute 'lower'"
+      ],
+      "elapsed_seconds": 465.2,
+      "items_per_second": 0.04,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 16,
+      "temporal_conflicts": 16,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 624.3,
+      "items_per_second": 0.03,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 20,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 569.1,
+      "items_per_second": 0.04,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 20,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 558.4,
+      "items_per_second": 0.04,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 20,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 542.3,
+      "items_per_second": 0.04,
+      "tcs": 0.0,
+      "overall_accuracy": 0.0,
+      "correct": 0,
+      "incorrect": 20,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 0
+    }
+  ],
+  "dataset_summaries": {
+    "halumem": {
+      "avg_tcs": 1.0,
+      "avg_accuracy": 1.0,
+      "total_items": 60,
+      "total_correct": 60,
+      "num_evals": 3
+    },
+    "locomo": {
+      "avg_tcs": 0.0,
+      "avg_accuracy": 0.0,
+      "total_items": 60,
+      "total_correct": 0,
+      "num_evals": 3
+    },
+    "timebench": {
+      "avg_tcs": 0.0,
+      "avg_accuracy": 0.0,
+      "total_items": 60,
+      "total_correct": 0,
+      "num_evals": 3
+    },
+    "temporal_memory": {
+      "avg_tcs": 0.0,
+      "avg_accuracy": 0.0,
+      "total_items": 60,
+      "total_correct": 0,
+      "num_evals": 3
+    }
+  },
+  "config_summaries": {
+    "RSPM-Basic": {
+      "avg_tcs": 0.25,
+      "avg_accuracy": 0.25,
+      "total_items": 240,
+      "num_evals": 12
+    }
+  },
+  "overall": {
+    "avg_tcs": 0.25,
+    "avg_accuracy": 0.25,
+    "total_items": 240,
+    "total_correct": 60,
+    "goal_achieved": false
+  }
+}

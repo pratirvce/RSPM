@@ -1,0 +1,32 @@
+RSPM Multi-Dataset Evaluation Scoreboard (v2)
+==========================================================================================
+Date: 2026-02-08 17:03:42
+Total Time: 262s
+
+Dataset            Split        Config            Items      TCS   Accuracy   Goal
+--------------------------------------------------------------------------------
+halumem            dev          RSPM-LLM             20   95.0%     95.0%   PASS
+halumem            validation   RSPM-LLM             20   94.1%     95.0%   FAIL
+halumem            test         RSPM-LLM             20  100.0%    100.0%   PASS
+locomo             dev          RSPM-LLM             20   25.0%     25.0%   FAIL
+locomo             validation   RSPM-LLM             20   30.0%     30.0%   FAIL
+locomo             test         RSPM-LLM             20   25.0%     25.0%   FAIL
+timebench          dev          RSPM-LLM             20   70.0%     70.0%   FAIL
+timebench          validation   RSPM-LLM             20   80.0%     80.0%   FAIL
+timebench          test         RSPM-LLM             20   70.0%     70.0%   FAIL
+temporal_memory    dev          RSPM-LLM             20   15.0%     15.0%   FAIL
+temporal_memory    validation   RSPM-LLM             20    0.0%      0.0%   FAIL
+temporal_memory    test         RSPM-LLM             20    0.0%      0.0%   FAIL
+longmemeval        dev          RSPM-LLM             20   83.3%     75.0%   FAIL
+longmemeval        validation   RSPM-LLM             20  100.0%     90.0%   PASS
+longmemeval        test         RSPM-LLM             20   66.7%     70.0%   FAIL
+personamem         dev          RSPM-LLM             20  100.0%     90.0%   PASS
+personamem         validation   RSPM-LLM             20  100.0%     95.0%   PASS
+personamem         test         RSPM-LLM             20  100.0%     95.0%   PASS
+memoryagentbench   dev          RSPM-LLM             20   55.0%     55.0%   FAIL
+memoryagentbench   validation   RSPM-LLM             20   30.0%     30.0%   FAIL
+memoryagentbench   test         RSPM-LLM             20   50.0%     50.0%   FAIL
+
+================================================================================
+OVERALL: Avg TCS = 61.4% | Avg Accuracy = 59.8%
+Goal (>95%): NOT YET

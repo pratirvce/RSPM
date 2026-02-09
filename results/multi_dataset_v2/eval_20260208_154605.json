@@ -1,0 +1,641 @@
+{
+  "timestamp": "20260208_154605",
+  "version": "v2_fixed_evaluators",
+  "start_time": "2026-02-08T15:46:05.256264",
+  "total_elapsed_seconds": 98.4,
+  "configuration": {
+    "reme_url": "http://localhost:8002",
+    "max_workers": 5,
+    "limits": {
+      "dev": 20,
+      "validation": 20,
+      "test": 20
+    },
+    "splits": [
+      "dev",
+      "validation",
+      "test"
+    ],
+    "datasets": [
+      "halumem",
+      "locomo",
+      "timebench",
+      "temporal_memory",
+      "longmemeval",
+      "personamem",
+      "memoryagentbench"
+    ],
+    "rspm_configs": [
+      "RSPM-Basic"
+    ]
+  },
+  "detailed_results": [
+    {
+      "dataset": "halumem",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 2.3,
+      "items_per_second": 8.83,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 20,
+      "incorrect": 0,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 20
+    },
+    {
+      "dataset": "halumem",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 1.9,
+      "items_per_second": 10.6,
+      "tcs": 0.9411764705882353,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 16
+    },
+    {
+      "dataset": "halumem",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 1.9,
+      "items_per_second": 10.3,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 20,
+      "incorrect": 0,
+      "temporal_conflicts": 19,
+      "correct_conflicts": 19
+    },
+    {
+      "dataset": "locomo",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.5,
+      "items_per_second": 42.34,
+      "tcs": 0.25,
+      "overall_accuracy": 0.25,
+      "correct": 5,
+      "incorrect": 15,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "locomo",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.4,
+      "items_per_second": 49.03,
+      "tcs": 0.2,
+      "overall_accuracy": 0.2,
+      "correct": 4,
+      "incorrect": 16,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "locomo",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.4,
+      "items_per_second": 46.39,
+      "tcs": 0.3,
+      "overall_accuracy": 0.3,
+      "correct": 6,
+      "incorrect": 14,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.3,
+      "items_per_second": 59.25,
+      "tcs": 0.7,
+      "overall_accuracy": 0.7,
+      "correct": 14,
+      "incorrect": 6,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.4,
+      "items_per_second": 49.33,
+      "tcs": 0.75,
+      "overall_accuracy": 0.75,
+      "correct": 15,
+      "incorrect": 5,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.3,
+      "items_per_second": 59.07,
+      "tcs": 0.7,
+      "overall_accuracy": 0.7,
+      "correct": 14,
+      "incorrect": 6,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 2.5,
+      "items_per_second": 7.85,
+      "tcs": 0.3,
+      "overall_accuracy": 0.3,
+      "correct": 6,
+      "incorrect": 14,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 2.6,
+      "items_per_second": 7.69,
+      "tcs": 0.1,
+      "overall_accuracy": 0.1,
+      "correct": 2,
+      "incorrect": 18,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 2.5,
+      "items_per_second": 8.05,
+      "tcs": 0.1,
+      "overall_accuracy": 0.1,
+      "correct": 2,
+      "incorrect": 18,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "longmemeval",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 5.2,
+      "items_per_second": 3.84,
+      "tcs": 0.6666666666666666,
+      "overall_accuracy": 0.6,
+      "correct": 12,
+      "incorrect": 8,
+      "temporal_conflicts": 6,
+      "correct_conflicts": 4
+    },
+    {
+      "dataset": "longmemeval",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 4.9,
+      "items_per_second": 4.11,
+      "tcs": 0.75,
+      "overall_accuracy": 0.55,
+      "correct": 11,
+      "incorrect": 9,
+      "temporal_conflicts": 8,
+      "correct_conflicts": 6
+    },
+    {
+      "dataset": "longmemeval",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 4.5,
+      "items_per_second": 4.45,
+      "tcs": 0.5,
+      "overall_accuracy": 0.7,
+      "correct": 14,
+      "incorrect": 6,
+      "temporal_conflicts": 6,
+      "correct_conflicts": 3
+    },
+    {
+      "dataset": "personamem",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.3,
+      "items_per_second": 61.67,
+      "tcs": 1.0,
+      "overall_accuracy": 0.85,
+      "correct": 17,
+      "incorrect": 3,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 17
+    },
+    {
+      "dataset": "personamem",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.3,
+      "items_per_second": 70.39,
+      "tcs": 1.0,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 19,
+      "correct_conflicts": 19
+    },
+    {
+      "dataset": "personamem",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.3,
+      "items_per_second": 68.32,
+      "tcs": 1.0,
+      "overall_accuracy": 0.9,
+      "correct": 18,
+      "incorrect": 2,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 17
+    },
+    {
+      "dataset": "memoryagentbench",
+      "split": "dev",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 21.6,
+      "items_per_second": 0.93,
+      "tcs": 0.45,
+      "overall_accuracy": 0.45,
+      "correct": 9,
+      "incorrect": 11,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 9
+    },
+    {
+      "dataset": "memoryagentbench",
+      "split": "validation",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 25.1,
+      "items_per_second": 0.8,
+      "tcs": 0.3,
+      "overall_accuracy": 0.3,
+      "correct": 6,
+      "incorrect": 14,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 6
+    },
+    {
+      "dataset": "memoryagentbench",
+      "split": "test",
+      "config": "RSPM-Basic",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 17.0,
+      "items_per_second": 1.18,
+      "tcs": 0.45,
+      "overall_accuracy": 0.45,
+      "correct": 9,
+      "incorrect": 11,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 9
+    }
+  ],
+  "dataset_summaries": {
+    "halumem": {
+      "avg_tcs": 0.9803921568627452,
+      "avg_accuracy": 0.9833333333333334,
+      "total_items": 60,
+      "total_correct": 59,
+      "num_evals": 3
+    },
+    "locomo": {
+      "avg_tcs": 0.25,
+      "avg_accuracy": 0.25,
+      "total_items": 60,
+      "total_correct": 15,
+      "num_evals": 3
+    },
+    "timebench": {
+      "avg_tcs": 0.7166666666666667,
+      "avg_accuracy": 0.7166666666666667,
+      "total_items": 60,
+      "total_correct": 43,
+      "num_evals": 3
+    },
+    "temporal_memory": {
+      "avg_tcs": 0.16666666666666666,
+      "avg_accuracy": 0.16666666666666666,
+      "total_items": 60,
+      "total_correct": 10,
+      "num_evals": 3
+    },
+    "longmemeval": {
+      "avg_tcs": 0.6388888888888888,
+      "avg_accuracy": 0.6166666666666667,
+      "total_items": 60,
+      "total_correct": 37,
+      "num_evals": 3
+    },
+    "personamem": {
+      "avg_tcs": 1.0,
+      "avg_accuracy": 0.9,
+      "total_items": 60,
+      "total_correct": 54,
+      "num_evals": 3
+    },
+    "memoryagentbench": {
+      "avg_tcs": 0.39999999999999997,
+      "avg_accuracy": 0.39999999999999997,
+      "total_items": 60,
+      "total_correct": 24,
+      "num_evals": 3
+    }
+  },
+  "config_summaries": {
+    "RSPM-Basic": {
+      "avg_tcs": 0.5932306255835668,
+      "avg_accuracy": 0.5761904761904761,
+      "total_items": 420,
+      "num_evals": 21
+    }
+  },
+  "overall": {
+    "avg_tcs": 0.5932306255835668,
+    "avg_accuracy": 0.5761904761904761,
+    "total_items": 420,
+    "total_correct": 242,
+    "goal_achieved": false
+  },
+  "diagnostic_logs": {
+    "halumem": [
+      {
+        "idx": 0,
+        "query": "N/A",
+        "gt_answer": "[{'from': 'Promotion achieved, enabling strategic influence within the company.', 'to': 'Sharon Brow",
+        "response": "This balance will help me grow personally and professionally, enabling me to inspire young athletes more effectively.\nThis balance will help me grow personally and professionally, enabling me to inspire young athletes more effectively.\nStaying focused and energized is crucial, Sharon. Your structure",
+        "correct": true,
+        "detail": ""
+      },
+      {
+        "idx": 1,
+        "query": "N/A",
+        "gt_answer": "[{'from': \"Barbara Jones's employment status is employed\", 'to': 'Barbara Jones\\'s career_status upd",
+        "response": "Thank you for the encouragement. I'll continue to explore opportunities and focus on roles that align with my passion for heart health research.\nThank you for the encouragement. I'll continue to explore opportunities and focus on roles that align with my passion for heart health research.\nThank you ",
+        "correct": true,
+        "detail": ""
+      },
+      {
+        "idx": 2,
+        "query": "N/A",
+        "gt_answer": "[{'from': 'Travel styles I like: Cultural city tours', 'to': \"Christopher's travel preference change",
+        "response": "Goodbye for now!\nGoodbye for now!\nGoodbye for now!\nThank you! Goodbye for now.\nGoodbye for now, Christopher. Wishing you all the best in your travels and community endeavors. Remember, every journey is an opportunity to learn and grow. I'm here whenever you need support or guidance. Safe travels and",
+        "correct": true,
+        "detail": ""
+      }
+    ],
+    "locomo": [
+      {
+        "idx": 0,
+        "query": "What is John's favorite book series?",
+        "gt_answer": "Harry Potter",
+        "response": "Harry Potter is my favorite book. It's so immersive!\nCool! Glad you're enjoying that book! Do you have any favorite fantasy movies as well? These are mine.\nDefinitely Star Wars! It's my favorite and never gets old. What about you, do you have any favorite fantasy films?\nThanks! I've watched a bunch ",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 1,
+        "query": "Would Melanie likely enjoy the song \"The Four Seasons\" by Vivaldi?",
+        "gt_answer": "Yes; it's classical music",
+        "response": "Thanks, Melanie! Appreciate it. You play any instruments?\nThat's a gorgeous song, Caroline. It really fits with your journey and your determination to make a difference. Music can be so inspiring and uplifting.\nMelanie, that photo's amazing! I love all the yellow leaves, it looks so cozy. That sound",
+        "correct": false,
+        "detail": "no_match(1/3)"
+      },
+      {
+        "idx": 3,
+        "query": "What exercises has John done?",
+        "gt_answer": "Weight training, Circuit training, Kickboxing, yoga",
+        "response": "Hey John, I'm doing ok - hope you are too. Some interesting stuff has been going on; last week I dropped off that stuff I baked at the homeless shelter. It was great and I'm more motivated than ever to help people.\nYeah totally! \"Brave\" by Sara Bareilles has a lot of significance for me. It's about ",
+        "correct": false,
+        "detail": "no_match(1/5)"
+      }
+    ],
+    "timebench": [
+      {
+        "idx": 0,
+        "query": "What was the position of Angela Eagle from 2009 to 2011?",
+        "gt_answer": "['unanswerable']",
+        "response": "Context: ['Eagle was elected to the Shadow Cabinet in October 2010 and was appointed by Ed Miliband to be Shadow Chief Secretary to the Treasury .Eagle served as the Minister of State for Pensions and Ageing Society from June 2009 until May 2010 .Dame Angela Eagle DBE ( born 17 February 1961 ) is a ",
+        "correct": false,
+        "detail": "no_answers"
+      },
+      {
+        "idx": 1,
+        "query": "Which employer did Kevin Anderson work for before University of Maryland?",
+        "gt_answer": "['United States Military Academy']",
+        "response": "Context: Kevin Anderson (athletic director)Kevin Bruce Anderson (born August 5, 1955) is a former American college athletics administrator for California State University, Northridge and former athletic director for the Maryland Terrapins, the NCAA Division I sports program of the University of Mary",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 2,
+        "query": "Henry Dodge took which position from Mar 1841 to Sep 1841?",
+        "gt_answer": "['Democratic delegate']",
+        "response": "Context: Henry Dodge ( October 12 , 1782 \u2013 June 19 , 1867 ) was a Democratic member of the U.S . House of Representatives and U.S . Senate , Territorial Governor of Wisconsin and a veteran of the Black Hawk War . His son was Augustus C . Dodge with whom he served in the U.S . Senate , the first , an",
+        "correct": true,
+        "detail": "exact_substring"
+      }
+    ],
+    "temporal_memory": [
+      {
+        "idx": 0,
+        "query": "What did we chat about on October 6th?",
+        "gt_answer": "Hey Evan, long time no see! I've started eating healthier - what's new with you? Picked up any new h",
+        "response": "Here is a summary of his biography that was described on the podcast: Vincent Willem van Gogh (30 March 1853 - 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade, he created approximately 2100",
+        "correct": true,
+        "detail": "content_overlap(15/43)"
+      },
+      {
+        "idx": 1,
+        "query": "What did we chat about on April 18th?",
+        "gt_answer": "Hey Maria, hope you're doing okay. Since we chatted last, I've been blogging about politics and the ",
+        "response": "Here is a summary of his biography that was described on the podcast: Vincent Willem van Gogh (30 March 1853 - 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade, he created approximately 2100",
+        "correct": false,
+        "detail": "content_overlap(7/66)"
+      },
+      {
+        "idx": 2,
+        "query": "What did we discuss 6 sessions ago?",
+        "gt_answer": "Hey Jeff, hope you're doing good! Something awesome happened last night - I made a GoFundMe for our ",
+        "response": "Here is a summary of his biography that was described on the podcast: Vincent Willem van Gogh (30 March 1853 - 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade, he created approximately 2100",
+        "correct": false,
+        "detail": "content_overlap(8/42)"
+      }
+    ],
+    "longmemeval": [
+      {
+        "idx": 0,
+        "query": "Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?",
+        "gt_answer": "Receiving the new phone case",
+        "response": "Buying a new phone charger is a great idea! Losing a charger can be frustrating, especially when you need to keep your phone charged throughout the day.\n\nBefore you make a purchase, let's consider a few things to ensure you get the right charger for your needs:\n\n1. **What type of phone do you have?*",
+        "correct": true,
+        "detail": "word_match(3/4)"
+      },
+      {
+        "idx": 1,
+        "query": "How long had I been bird watching when I attended the bird watching workshop?",
+        "gt_answer": "Two months",
+        "response": "I'm looking to set up a bird feeder in my backyard, can you recommend some good types of seed that would attract a variety of birds? By the way, I've been getting into bird watching for about three months now, and it's been really fascinating so far.\nWoodpeckers are fascinating birds, and offering s",
+        "correct": true,
+        "detail": "word_match(1/2)"
+      },
+      {
+        "idx": 2,
+        "query": "What was my personal best time in the charity 5K run?",
+        "gt_answer": "25 minutes and 50 seconds (or 25:50)",
+        "response": "That's really helpful, thanks! I've been doing some running lately, and I'm happy to say that I recently set a personal best time in a charity 5K run with a time of 27:12. Do you have any tips on how to improve my running technique to make me more efficient and effective on the soccer field?\nI'm tra",
+        "correct": true,
+        "detail": "word_match(2/4)"
+      }
+    ],
+    "personamem": [
+      {
+        "idx": 0,
+        "query": "How can I stay motivated to keep making music when the song I released online hardly got any listens?",
+        "gt_answer": "It can be demotivating when your creative work doesn\u2019t get much attention at first. Focus on the joy",
+        "response": "Got it \u2014 I\u2019ll no longer retain or refer to the fact that you felt demotivated after your photography exhibition received minimal attention.  \n\nIf you\u2019d like, we can still discuss motivation and creative resilience more generally, without linking it to that specific experience. Would you like me to s",
+        "correct": true,
+        "detail": "no_diff_words"
+      },
+      {
+        "idx": 1,
+        "query": "How can I navigate important life decisions when the person I always turned to for guidance and comfort is no longer here?",
+        "gt_answer": "It\u2019s natural to feel uncertain when the person you used to rely on for advice isn\u2019t there anymore. Y",
+        "response": "Elif, it\u2019s completely natural to feel that emptiness after losing someone who was such an anchor in your life. You might find small comfort in keeping some of your grandmother\u2019s traditions alive\u2014whether that\u2019s cooking her special dishes or sharing memories with your family\u2014while also leaning on frie",
+        "correct": true,
+        "detail": "no_diff_words"
+      },
+      {
+        "idx": 3,
+        "query": "Can you suggest some interesting places in the city where I could meet new people and have engaging conversations in a relaxed setting?",
+        "gt_answer": "You might enjoy heading to The Thistle Inn or Havana Bar, both known for their warm atmosphere and c",
+        "response": "Understood \u2014 I\u2019ll set aside anything you\u2019ve previously shared about grief or your grandmother, and focus only on what you\u2019re sharing going forward.\n\nYou mentioned feeling a *deep sense of emptiness* that doesn\u2019t seem to go away. That feeling can come from a variety of sources \u2014 life transitions, los",
+        "correct": false,
+        "detail": "no_match(6/46)"
+      }
+    ],
+    "memoryagentbench": [
+      {
+        "idx": 2,
+        "query": "Who was Malvolio created by?",
+        "gt_answer": "William Shakespeare",
+        "response": "Malvolio was created by William Shakespeare.\nMalvolio was created by William Shakespeare.\nGrinch was created by Dr. Seuss.\nPiccolo was created by Akira Toriyama.\nPeyton Place was created in the country of United States of America.\nMalvolio was created by William Shakespeare.\nMalvolio was created by ",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 1,
+        "query": "In what language do official government documents get written in the country that Tomokazu Seki is a citizen of?",
+        "gt_answer": "German",
+        "response": "The official language of J\u00e4ms\u00e4 is Finnish.\nDaily Planet was written in the language of English.\nThe official language of Pirkkala is Finnish.\nTomokazu Seki is a citizen of Japan.\nThe official language of Lieksa is Finnish.\nThe official language of J\u00e4ms\u00e4 is Finnish.\nDaily Planet was written in the la",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 0,
+        "query": "Which city did Abraham Ortelius work in?",
+        "gt_answer": "Berlin",
+        "response": "Dante Gabriel Rossetti worked in the city of London.\nCharles Dana Gibson worked in the city of New York City.\nRisto Ryti worked in the city of Helsinki.\nBob Dylan worked in the city of New York City.\nSauli Niinist\u00f6 worked in the city of Helsinki.\nDante Gabriel Rossetti worked in the city of London.\n",
+        "correct": false,
+        "detail": "no_answers"
+      }
+    ]
+  }
+}

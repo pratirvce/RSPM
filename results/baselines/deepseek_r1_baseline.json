@@ -1,0 +1,117 @@
+{
+  "experiment": "DeepSeek-R1 Baseline (Retrieval-Only)",
+  "date": "2026-02-08",
+  "model": "deepseek-reasoner (DeepSeek-R1)",
+  "method": "RSPM-Basic with local TF-IDF memory store",
+  "description": "Retrieval-only evaluation. TF-IDF memory store retrieves top-k relevant messages, returned as raw text without LLM answer generation.",
+  "config": {
+    "sleep_frequency": 99999,
+    "enable_hierarchical": false,
+    "enable_reranking": false,
+    "memory_store": "local_tfidf",
+    "llm_generation": false,
+    "tfidf_max_features": 5000,
+    "tfidf_ngram_range": [1, 2],
+    "top_k_retrieval": 5
+  },
+  "evaluation": {
+    "items_per_split": 20,
+    "splits": ["dev", "validation", "test"],
+    "total_items": 420,
+    "total_time_seconds": 98
+  },
+  "per_dataset_results": {
+    "halumem": {
+      "avg_tcs": 98.0,
+      "avg_accuracy": 98.3,
+      "total_correct": 59,
+      "total_items": 60,
+      "splits": {
+        "dev": {"tcs": 100.0, "accuracy": 100.0, "correct": 20, "items": 20},
+        "validation": {"tcs": 94.1, "accuracy": 95.0, "correct": 19, "items": 20},
+        "test": {"tcs": 100.0, "accuracy": 100.0, "correct": 20, "items": 20}
+      },
+      "status": "PASS"
+    },
+    "personamem": {
+      "avg_tcs": 100.0,
+      "avg_accuracy": 90.0,
+      "total_correct": 54,
+      "total_items": 60,
+      "splits": {
+        "dev": {"tcs": 100.0, "accuracy": 85.0, "correct": 17, "items": 20},
+        "validation": {"tcs": 100.0, "accuracy": 95.0, "correct": 19, "items": 20},
+        "test": {"tcs": 100.0, "accuracy": 90.0, "correct": 18, "items": 20}
+      },
+      "status": "PASS"
+    },
+    "timebench": {
+      "avg_tcs": 71.7,
+      "avg_accuracy": 71.7,
+      "total_correct": 43,
+      "total_items": 60,
+      "splits": {
+        "dev": {"tcs": 70.0, "accuracy": 70.0, "correct": 14, "items": 20},
+        "validation": {"tcs": 75.0, "accuracy": 75.0, "correct": 15, "items": 20},
+        "test": {"tcs": 70.0, "accuracy": 70.0, "correct": 14, "items": 20}
+      },
+      "status": "FAIL"
+    },
+    "longmemeval": {
+      "avg_tcs": 63.9,
+      "avg_accuracy": 61.7,
+      "total_correct": 37,
+      "total_items": 60,
+      "splits": {
+        "dev": {"tcs": 66.7, "accuracy": 60.0, "correct": 12, "items": 20},
+        "validation": {"tcs": 75.0, "accuracy": 55.0, "correct": 11, "items": 20},
+        "test": {"tcs": 50.0, "accuracy": 70.0, "correct": 14, "items": 20}
+      },
+      "status": "FAIL"
+    },
+    "memoryagentbench": {
+      "avg_tcs": 40.0,
+      "avg_accuracy": 40.0,
+      "total_correct": 24,
+      "total_items": 60,
+      "splits": {
+        "dev": {"tcs": 45.0, "accuracy": 45.0, "correct": 9, "items": 20},
+        "validation": {"tcs": 30.0, "accuracy": 30.0, "correct": 6, "items": 20},
+        "test": {"tcs": 45.0, "accuracy": 45.0, "correct": 9, "items": 20}
+      },
+      "status": "FAIL"
+    },
+    "locomo": {
+      "avg_tcs": 25.0,
+      "avg_accuracy": 25.0,
+      "total_correct": 15,
+      "total_items": 60,
+      "splits": {
+        "dev": {"tcs": 25.0, "accuracy": 25.0, "correct": 5, "items": 20},
+        "validation": {"tcs": 20.0, "accuracy": 20.0, "correct": 4, "items": 20},
+        "test": {"tcs": 30.0, "accuracy": 30.0, "correct": 6, "items": 20}
+      },
+      "status": "FAIL"
+    },
+    "temporal_memory": {
+      "avg_tcs": 16.7,
+      "avg_accuracy": 16.7,
+      "total_correct": 10,
+      "total_items": 60,
+      "splits": {
+        "dev": {"tcs": 30.0, "accuracy": 30.0, "correct": 6, "items": 20},
+        "validation": {"tcs": 10.0, "accuracy": 10.0, "correct": 2, "items": 20},
+        "test": {"tcs": 10.0, "accuracy": 10.0, "correct": 2, "items": 20}
+      },
+      "status": "FAIL"
+    }
+  },
+  "overall": {
+    "avg_tcs": 59.3,
+    "avg_accuracy": 57.6,
+    "total_correct": 242,
+    "total_items": 420,
+    "datasets_passing": 2,
+    "datasets_total": 7
+  }
+}

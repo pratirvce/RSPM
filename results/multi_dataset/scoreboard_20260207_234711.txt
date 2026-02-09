@@ -1,0 +1,23 @@
+RSPM Multi-Dataset Evaluation Scoreboard
+==========================================================================================
+Date: 2026-02-07 23:47:11
+Total Time: 7544s
+
+Dataset            Split        Config            Items      TCS   Accuracy   Goal
+--------------------------------------------------------------------------------
+halumem            dev          RSPM-Basic           20  100.0%    100.0%   PASS
+halumem            validation   RSPM-Basic           20  100.0%    100.0%   PASS
+halumem            test         RSPM-Basic           20  100.0%    100.0%   PASS
+locomo             dev          RSPM-Basic           20    0.0%      0.0%   FAIL
+locomo             validation   RSPM-Basic           20    0.0%      0.0%   FAIL
+locomo             test         RSPM-Basic           20    0.0%      0.0%   FAIL
+timebench          dev          RSPM-Basic           20    0.0%      0.0%   FAIL
+timebench          validation   RSPM-Basic           20    0.0%      0.0%   FAIL
+timebench          test         RSPM-Basic           20    0.0%      0.0%   FAIL
+temporal_memory    dev          RSPM-Basic           20    0.0%      0.0%   FAIL
+temporal_memory    validation   RSPM-Basic           20    0.0%      0.0%   FAIL
+temporal_memory    test         RSPM-Basic           20    0.0%      0.0%   FAIL
+
+================================================================================
+OVERALL: Avg TCS = 25.0% | Avg Accuracy = 25.0%
+Goal (>95%): NOT YET

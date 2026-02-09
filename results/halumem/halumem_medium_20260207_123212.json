@@ -1,0 +1,63 @@
+{
+  "dataset": "datasets/memoryscope/halumem_medium.jsonl",
+  "start_time": "2026-02-07T12:20:24.823436",
+  "configurations": {
+    "RSPM-Basic": {
+      "workspace_id": "halumem_rspm_basic",
+      "sleep_frequency": 10,
+      "enable_hierarchical": false,
+      "enable_reranking": false,
+      "reme_url": "http://localhost:8002"
+    },
+    "RSPM-Hierarchical": {
+      "workspace_id": "halumem_rspm_hierarchical",
+      "sleep_frequency": 10,
+      "enable_hierarchical": true,
+      "enable_reranking": false,
+      "reme_url": "http://localhost:8002"
+    },
+    "RSPM-Reranking": {
+      "workspace_id": "halumem_rspm_reranking",
+      "sleep_frequency": 10,
+      "enable_hierarchical": false,
+      "enable_reranking": true,
+      "reme_url": "http://localhost:8002"
+    },
+    "RSPM-Advanced": {
+      "workspace_id": "halumem_rspm_advanced",
+      "sleep_frequency": 10,
+      "enable_hierarchical": true,
+      "enable_reranking": true,
+      "reme_url": "http://localhost:8002"
+    }
+  },
+  "results": {
+    "RSPM-Basic": {
+      "metrics": {
+        "tcs": 0.0,
+        "overall_accuracy": 1.0,
+        "memory_efficiency_ratio": 0.0,
+        "total": 3,
+        "correct": 3,
+        "incorrect": 0,
+        "temporal_conflicts": 0,
+        "correct_conflicts": 0
+      },
+      "goal_achieved": false
+    },
+    "RSPM-Hierarchical": {
+      "metrics": {
+        "tcs": 0.0,
+        "overall_accuracy": 1.0,
+        "memory_efficiency_ratio": 0.0,
+        "total": 3,
+        "correct": 3,
+        "incorrect": 0,
+        "temporal_conflicts": 0,
+        "correct_conflicts": 0
+      },
+      "goal_achieved": false
+    }
+  },
+  "end_time": "2026-02-07T12:32:12.774268"
+}

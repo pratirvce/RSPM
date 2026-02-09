@@ -1,0 +1,59 @@
+================================================================================
+RSPM BASELINE SCORES - DeepSeek-R1 (Retrieval-Only, No LLM Generation)
+================================================================================
+Date:   2026-02-08
+Model:  deepseek-reasoner (DeepSeek-R1)
+Method: RSPM-Basic + Local TF-IDF Memory Store (retrieval-only, no LLM answer generation)
+Time:   98 seconds (420 items)
+
+================================================================================
+PER-DATASET RESULTS (averaged across dev/validation/test splits)
+================================================================================
+
+  Dataset              Avg TCS    Avg Acc    Correct/Total    Status
+  -----------------------------------------------------------------------
+  HaluMem              98.0%      98.3%      59/60            PASS
+  PersonaMem          100.0%      90.0%      54/60            PASS
+  TimeBench            71.7%      71.7%      43/60            FAIL
+  LongMemEval          63.9%      61.7%      37/60            FAIL
+  MemoryAgentBench     40.0%      40.0%      24/60            FAIL
+  LoCoMo               25.0%      25.0%      15/60            FAIL
+  TemporalMemory       16.7%      16.7%      10/60            FAIL
+
+================================================================================
+PER-SPLIT DETAIL
+================================================================================
+
+  Dataset            Split        Items      TCS      Accuracy   Correct
+  -----------------------------------------------------------------------
+  halumem            dev             20   100.0%      100.0%      20
+  halumem            validation      20    94.1%       95.0%      19
+  halumem            test            20   100.0%      100.0%      20
+  locomo             dev             20    25.0%       25.0%       5
+  locomo             validation      20    20.0%       20.0%       4
+  locomo             test            20    30.0%       30.0%       6
+  timebench          dev             20    70.0%       70.0%      14
+  timebench          validation      20    75.0%       75.0%      15
+  timebench          test            20    70.0%       70.0%      14
+  temporal_memory    dev             20    30.0%       30.0%       6
+  temporal_memory    validation      20    10.0%       10.0%       2
+  temporal_memory    test            20    10.0%       10.0%       2
+  longmemeval        dev             20    66.7%       60.0%      12
+  longmemeval        validation      20    75.0%       55.0%      11
+  longmemeval        test            20    50.0%       70.0%      14
+  personamem         dev             20   100.0%       85.0%      17
+  personamem         validation      20   100.0%       95.0%      19
+  personamem         test            20   100.0%       90.0%      18
+  memoryagentbench   dev             20    45.0%       45.0%       9
+  memoryagentbench   validation      20    30.0%       30.0%       6
+  memoryagentbench   test            20    45.0%       45.0%       9
+
+================================================================================
+OVERALL
+================================================================================
+  Avg TCS:        59.3%
+  Avg Accuracy:   57.6%
+  Total Correct:  242 / 420
+  Datasets PASS:  2 / 7 (HaluMem, PersonaMem)
+  Goal (>95%):    NOT YET
+================================================================================
