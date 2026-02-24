@@ -330,11 +330,22 @@ def evaluate_timebench_item(agent: RSPMAgent, item: dict, idx: int = 0) -> dict:
     # Try matching any answer
     matched, ratio, detail = multi_answer_match(response_str, answers, threshold=0.5)
     
+    # Handle unanswerable questions
+    is_unanswerable = any(str(a).lower().strip() == 'unanswerable' for a in answers)
+    if is_unanswerable and not matched:
+        neg_markers = ['not contain', 'does not contain', 'no information',
+                       'unanswerable', 'cannot be determined', 'not mentioned',
+                       'not enough information', 'insufficient', 'not supported',
+                       'cannot answer', 'unable to answer', 'not available']
+        if any(m in response_str.lower() for m in neg_markers):
+            matched = True
+            detail = "unanswerable_detected"
+    
     log_diagnostic("timebench", idx, query, str(answers)[:100], response_str, matched, detail)
     
     return {
         'correct': matched,
-        'has_conflict': False,  # TimeBench tests reasoning, not conflict resolution
+        'has_conflict': False,
         'category': item.get('metadata', {}).get('category', '')
     }
 

@@ -481,7 +481,7 @@ class AdvancedRSPMAgent:
                         "workspace_id": (self.episodic_workspace 
                                        if self.enable_hierarchical 
                                        else self.workspace_id),
-                        "query": conflict['old_statement'],
+                        "query": conflict.get('old_statement', conflict.get('old_value', '')),
                         "top_k": 20
                     }
                 )

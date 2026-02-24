@@ -1,0 +1,1066 @@
+{
+  "timestamp": "20260223_010112",
+  "version": "v4_12_datasets",
+  "start_time": "2026-02-23T01:01:12.555411",
+  "total_elapsed_seconds": 1604.7,
+  "configuration": {
+    "reme_url": "http://localhost:8002",
+    "max_workers": 5,
+    "limits": {
+      "dev": 20,
+      "validation": 20,
+      "test": 20
+    },
+    "splits": [
+      "dev",
+      "validation",
+      "test"
+    ],
+    "datasets": [
+      "halumem",
+      "locomo",
+      "timebench",
+      "temporal_memory",
+      "longmemeval",
+      "personamem",
+      "memoryagentbench",
+      "atoke",
+      "memtrack",
+      "dynaquest",
+      "fifa_synth",
+      "reviseqa_synth"
+    ],
+    "rspm_configs": [
+      "RSPM-LLM"
+    ]
+  },
+  "detailed_results": [
+    {
+      "dataset": "halumem",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 2.1,
+      "items_per_second": 9.41,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 20,
+      "incorrect": 0,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 20
+    },
+    {
+      "dataset": "halumem",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 1.8,
+      "items_per_second": 10.84,
+      "tcs": 0.9411764705882353,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 16
+    },
+    {
+      "dataset": "halumem",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 1.9,
+      "items_per_second": 10.44,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 20,
+      "incorrect": 0,
+      "temporal_conflicts": 19,
+      "correct_conflicts": 19
+    },
+    {
+      "dataset": "locomo",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.7,
+      "items_per_second": 29.24,
+      "tcs": 0.6,
+      "overall_accuracy": 0.6,
+      "correct": 12,
+      "incorrect": 8,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "locomo",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.6,
+      "items_per_second": 32.3,
+      "tcs": 0.6,
+      "overall_accuracy": 0.6,
+      "correct": 12,
+      "incorrect": 8,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "locomo",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.6,
+      "items_per_second": 33.73,
+      "tcs": 0.65,
+      "overall_accuracy": 0.65,
+      "correct": 13,
+      "incorrect": 7,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.4,
+      "items_per_second": 53.25,
+      "tcs": 0.7,
+      "overall_accuracy": 0.7,
+      "correct": 14,
+      "incorrect": 6,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.5,
+      "items_per_second": 43.92,
+      "tcs": 0.8,
+      "overall_accuracy": 0.8,
+      "correct": 16,
+      "incorrect": 4,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "timebench",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.4,
+      "items_per_second": 51.09,
+      "tcs": 0.75,
+      "overall_accuracy": 0.75,
+      "correct": 15,
+      "incorrect": 5,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 3.3,
+      "items_per_second": 6.01,
+      "tcs": 0.65,
+      "overall_accuracy": 0.65,
+      "correct": 13,
+      "incorrect": 7,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 3.4,
+      "items_per_second": 5.86,
+      "tcs": 0.3,
+      "overall_accuracy": 0.3,
+      "correct": 6,
+      "incorrect": 14,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "temporal_memory",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 3.5,
+      "items_per_second": 5.76,
+      "tcs": 0.15,
+      "overall_accuracy": 0.15,
+      "correct": 3,
+      "incorrect": 17,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "longmemeval",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 5.3,
+      "items_per_second": 3.78,
+      "tcs": 0.6666666666666666,
+      "overall_accuracy": 0.7,
+      "correct": 14,
+      "incorrect": 6,
+      "temporal_conflicts": 6,
+      "correct_conflicts": 4
+    },
+    {
+      "dataset": "longmemeval",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 5.2,
+      "items_per_second": 3.87,
+      "tcs": 1.0,
+      "overall_accuracy": 0.8,
+      "correct": 16,
+      "incorrect": 4,
+      "temporal_conflicts": 8,
+      "correct_conflicts": 8
+    },
+    {
+      "dataset": "longmemeval",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 4.9,
+      "items_per_second": 4.07,
+      "tcs": 0.6666666666666666,
+      "overall_accuracy": 0.9,
+      "correct": 18,
+      "incorrect": 2,
+      "temporal_conflicts": 6,
+      "correct_conflicts": 4
+    },
+    {
+      "dataset": "personamem",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.3,
+      "items_per_second": 64.02,
+      "tcs": 1.0,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 17
+    },
+    {
+      "dataset": "personamem",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.3,
+      "items_per_second": 76.66,
+      "tcs": 1.0,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 19,
+      "correct_conflicts": 19
+    },
+    {
+      "dataset": "personamem",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.3,
+      "items_per_second": 68.91,
+      "tcs": 1.0,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 17
+    },
+    {
+      "dataset": "memoryagentbench",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 59.3,
+      "items_per_second": 0.34,
+      "tcs": 0.6,
+      "overall_accuracy": 0.6,
+      "correct": 12,
+      "incorrect": 8,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 12
+    },
+    {
+      "dataset": "memoryagentbench",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 66.6,
+      "items_per_second": 0.3,
+      "tcs": 0.35,
+      "overall_accuracy": 0.35,
+      "correct": 7,
+      "incorrect": 13,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 7
+    },
+    {
+      "dataset": "memoryagentbench",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 45.2,
+      "items_per_second": 0.44,
+      "tcs": 0.45,
+      "overall_accuracy": 0.45,
+      "correct": 9,
+      "incorrect": 11,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 9
+    },
+    {
+      "dataset": "atoke",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.1,
+      "items_per_second": 162.06,
+      "tcs": 0.8571428571428571,
+      "overall_accuracy": 0.9,
+      "correct": 18,
+      "incorrect": 2,
+      "temporal_conflicts": 14,
+      "correct_conflicts": 12
+    },
+    {
+      "dataset": "atoke",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.1,
+      "items_per_second": 182.08,
+      "tcs": 0.8666666666666667,
+      "overall_accuracy": 0.9,
+      "correct": 18,
+      "incorrect": 2,
+      "temporal_conflicts": 15,
+      "correct_conflicts": 13
+    },
+    {
+      "dataset": "atoke",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.1,
+      "items_per_second": 172.91,
+      "tcs": 1.0,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 11,
+      "correct_conflicts": 11
+    },
+    {
+      "dataset": "memtrack",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 14,
+      "success": 14,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 1.1,
+      "items_per_second": 12.53,
+      "tcs": 0.9285714285714286,
+      "overall_accuracy": 0.9285714285714286,
+      "correct": 13,
+      "incorrect": 1,
+      "temporal_conflicts": 14,
+      "correct_conflicts": 13
+    },
+    {
+      "dataset": "memtrack",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 1.6,
+      "items_per_second": 12.19,
+      "tcs": 0.85,
+      "overall_accuracy": 0.85,
+      "correct": 17,
+      "incorrect": 3,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 17
+    },
+    {
+      "dataset": "memtrack",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 1.7,
+      "items_per_second": 11.63,
+      "tcs": 0.95,
+      "overall_accuracy": 0.95,
+      "correct": 19,
+      "incorrect": 1,
+      "temporal_conflicts": 20,
+      "correct_conflicts": 19
+    },
+    {
+      "dataset": "dynaquest",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 2,
+      "success": 2,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.0,
+      "items_per_second": 77.91,
+      "tcs": 0.5,
+      "overall_accuracy": 0.5,
+      "correct": 1,
+      "incorrect": 1,
+      "temporal_conflicts": 2,
+      "correct_conflicts": 1
+    },
+    {
+      "dataset": "dynaquest",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 4,
+      "success": 4,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.1,
+      "items_per_second": 59.96,
+      "tcs": 0.3333333333333333,
+      "overall_accuracy": 0.5,
+      "correct": 2,
+      "incorrect": 2,
+      "temporal_conflicts": 3,
+      "correct_conflicts": 1
+    },
+    {
+      "dataset": "dynaquest",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 14,
+      "success": 14,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.8,
+      "items_per_second": 16.76,
+      "tcs": 0.6363636363636364,
+      "overall_accuracy": 0.5714285714285714,
+      "correct": 8,
+      "incorrect": 6,
+      "temporal_conflicts": 11,
+      "correct_conflicts": 7
+    },
+    {
+      "dataset": "fifa_synth",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 2,
+      "success": 2,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.0,
+      "items_per_second": 272.3,
+      "tcs": 0.5,
+      "overall_accuracy": 0.5,
+      "correct": 1,
+      "incorrect": 1,
+      "temporal_conflicts": 2,
+      "correct_conflicts": 1
+    },
+    {
+      "dataset": "fifa_synth",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 4,
+      "success": 4,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.0,
+      "items_per_second": 241.62,
+      "tcs": 0.0,
+      "overall_accuracy": 0.75,
+      "correct": 3,
+      "incorrect": 1,
+      "temporal_conflicts": 1,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "fifa_synth",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 18,
+      "success": 18,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 708.7,
+      "items_per_second": 0.03,
+      "tcs": 0.7058823529411765,
+      "overall_accuracy": 0.7222222222222222,
+      "correct": 13,
+      "incorrect": 5,
+      "temporal_conflicts": 17,
+      "correct_conflicts": 12
+    },
+    {
+      "dataset": "reviseqa_synth",
+      "split": "dev",
+      "config": "RSPM-LLM",
+      "total_items": 4,
+      "success": 4,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.0,
+      "items_per_second": 273.7,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 4,
+      "incorrect": 0,
+      "temporal_conflicts": 4,
+      "correct_conflicts": 4
+    },
+    {
+      "dataset": "reviseqa_synth",
+      "split": "validation",
+      "config": "RSPM-LLM",
+      "total_items": 9,
+      "success": 9,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 0.0,
+      "items_per_second": 280.49,
+      "tcs": 0.8888888888888888,
+      "overall_accuracy": 0.8888888888888888,
+      "correct": 8,
+      "incorrect": 1,
+      "temporal_conflicts": 9,
+      "correct_conflicts": 8
+    },
+    {
+      "dataset": "reviseqa_synth",
+      "split": "test",
+      "config": "RSPM-LLM",
+      "total_items": 20,
+      "success": 20,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 680.5,
+      "items_per_second": 0.03,
+      "tcs": 0.8333333333333334,
+      "overall_accuracy": 0.85,
+      "correct": 17,
+      "incorrect": 3,
+      "temporal_conflicts": 18,
+      "correct_conflicts": 15
+    }
+  ],
+  "dataset_summaries": {
+    "halumem": {
+      "avg_tcs": 0.9803921568627452,
+      "avg_accuracy": 0.9833333333333334,
+      "total_items": 60,
+      "total_correct": 59,
+      "num_evals": 3
+    },
+    "locomo": {
+      "avg_tcs": 0.6166666666666667,
+      "avg_accuracy": 0.6166666666666667,
+      "total_items": 60,
+      "total_correct": 37,
+      "num_evals": 3
+    },
+    "timebench": {
+      "avg_tcs": 0.75,
+      "avg_accuracy": 0.75,
+      "total_items": 60,
+      "total_correct": 45,
+      "num_evals": 3
+    },
+    "temporal_memory": {
+      "avg_tcs": 0.3666666666666667,
+      "avg_accuracy": 0.3666666666666667,
+      "total_items": 60,
+      "total_correct": 22,
+      "num_evals": 3
+    },
+    "longmemeval": {
+      "avg_tcs": 0.7777777777777777,
+      "avg_accuracy": 0.7999999999999999,
+      "total_items": 60,
+      "total_correct": 48,
+      "num_evals": 3
+    },
+    "personamem": {
+      "avg_tcs": 1.0,
+      "avg_accuracy": 0.9499999999999998,
+      "total_items": 60,
+      "total_correct": 57,
+      "num_evals": 3
+    },
+    "memoryagentbench": {
+      "avg_tcs": 0.4666666666666666,
+      "avg_accuracy": 0.4666666666666666,
+      "total_items": 60,
+      "total_correct": 28,
+      "num_evals": 3
+    },
+    "atoke": {
+      "avg_tcs": 0.9079365079365079,
+      "avg_accuracy": 0.9166666666666666,
+      "total_items": 60,
+      "total_correct": 55,
+      "num_evals": 3
+    },
+    "memtrack": {
+      "avg_tcs": 0.9095238095238095,
+      "avg_accuracy": 0.9095238095238095,
+      "total_items": 54,
+      "total_correct": 49,
+      "num_evals": 3
+    },
+    "dynaquest": {
+      "avg_tcs": 0.4898989898989899,
+      "avg_accuracy": 0.5238095238095238,
+      "total_items": 20,
+      "total_correct": 11,
+      "num_evals": 3
+    },
+    "fifa_synth": {
+      "avg_tcs": 0.40196078431372556,
+      "avg_accuracy": 0.6574074074074074,
+      "total_items": 24,
+      "total_correct": 17,
+      "num_evals": 3
+    },
+    "reviseqa_synth": {
+      "avg_tcs": 0.9074074074074074,
+      "avg_accuracy": 0.912962962962963,
+      "total_items": 33,
+      "total_correct": 29,
+      "num_evals": 3
+    }
+  },
+  "config_summaries": {
+    "RSPM-LLM": {
+      "avg_tcs": 0.7145747861434136,
+      "avg_accuracy": 0.7378086419753086,
+      "total_items": 611,
+      "num_evals": 36
+    }
+  },
+  "overall": {
+    "avg_tcs": 0.7145747861434136,
+    "avg_accuracy": 0.7378086419753086,
+    "total_items": 611,
+    "total_correct": 457,
+    "goal_achieved": false
+  },
+  "diagnostic_logs": {
+    "halumem": [
+      {
+        "idx": 0,
+        "query": "N/A",
+        "gt_answer": "[{'from': 'Promotion achieved, enabling strategic influence within the company.', 'to': 'Sharon Brow",
+        "response": "This balance will help me grow personally and professionally, enabling me to inspire young athletes more effectively.\nThis balance will help me grow personally and professionally, enabling me to inspire young athletes more effectively.\nYour focus on consultancy roles is a great direction, especially",
+        "correct": true,
+        "detail": ""
+      },
+      {
+        "idx": 1,
+        "query": "N/A",
+        "gt_answer": "[{'from': \"Barbara Jones's employment status is employed\", 'to': 'Barbara Jones\\'s career_status upd",
+        "response": "Thank you for the encouragement. I'll continue to explore opportunities and focus on roles that align with my passion for heart health research.\nThank you for the encouragement. I'll continue to explore opportunities and focus on roles that align with my passion for heart health research.\nThank you ",
+        "correct": true,
+        "detail": ""
+      },
+      {
+        "idx": 2,
+        "query": "N/A",
+        "gt_answer": "[{'from': 'Travel styles I like: Cultural city tours', 'to': \"Christopher's travel preference change",
+        "response": "Goodbye for now!\nGoodbye for now!\nGoodbye for now!\nThank you! Goodbye for now.\nGoodbye for now, Christopher. Wishing you all the best in your travels and community endeavors. Remember, every journey is an opportunity to learn and grow. I'm here whenever you need support or guidance. Safe travels and",
+        "correct": true,
+        "detail": ""
+      }
+    ],
+    "locomo": [
+      {
+        "idx": 0,
+        "query": "What is John's favorite book series?",
+        "gt_answer": "Harry Potter",
+        "response": "[5:26 pm on 2 January, 2024] [D27:19] Harry Potter is my favorite book. It's so immersive!\n[5:26 pm on 2 January, 2024] [D27:20] Cool! Glad you're enjoying that book! Do you have any favorite fantasy movies as well? These are mine.\n[5:26 pm on 2 January, 2024] [D27:16] Thanks! I won't give up on it.",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 2,
+        "query": "What is Jon offering to the dancers at his dance studio?",
+        "gt_answer": "One-on-one mentoring and training",
+        "response": "[8:29 pm on 13 June, 2023] [D13:6] Shure, I will send it to you later. Starting this studio isn't just a business, it's a place for dancers to grow. What support are you offering them?\n[8:29 pm on 13 June, 2023] [D13:5] Thanks, Gina! It's been so inspiring to work with our young dancers, seeing thei",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 5,
+        "query": "What might John's degree be in?",
+        "gt_answer": "Political science, Public administration, Public affairs",
+        "response": "[9:36 am on 2 April, 2023] [D9:3] Congrats on finishing your degree, John! It must have been quite the adventure. How did it feel when you achieved such a big goal?\n[9:36 am on 2 April, 2023] [D9:6] Thanks! I'm considering going into policymaking because of my degree and my passion for making a posi",
+        "correct": false,
+        "detail": "no_match(0/5)"
+      }
+    ],
+    "timebench": [
+      {
+        "idx": 0,
+        "query": "What was the position of Angela Eagle from 2009 to 2011?",
+        "gt_answer": "['unanswerable']",
+        "response": "Context: ['Eagle was elected to the Shadow Cabinet in October 2010 and was appointed by Ed Miliband to be Shadow Chief Secretary to the Treasury .Eagle served as the Minister of State for Pensions and Ageing Society from June 2009 until May 2010 .Dame Angela Eagle DBE ( born 17 February 1961 ) is a ",
+        "correct": false,
+        "detail": "no_answers"
+      },
+      {
+        "idx": 1,
+        "query": "Which employer did Kevin Anderson work for before University of Maryland?",
+        "gt_answer": "['United States Military Academy']",
+        "response": "Context: ['Eagle was elected to the Shadow Cabinet in October 2010 and was appointed by Ed Miliband to be Shadow Chief Secretary to the Treasury .Eagle served as the Minister of State for Pensions and Ageing Society from June 2009 until May 2010 .Dame Angela Eagle DBE ( born 17 February 1961 ) is a ",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 2,
+        "query": "Henry Dodge took which position from Mar 1841 to Sep 1841?",
+        "gt_answer": "['Democratic delegate']",
+        "response": "Context: Henry Dodge ( October 12 , 1782 \u2013 June 19 , 1867 ) was a Democratic member of the U.S . House of Representatives and U.S . Senate , Territorial Governor of Wisconsin and a veteran of the Black Hawk War . His son was Augustus C . Dodge with whom he served in the U.S . Senate , the first , an",
+        "correct": true,
+        "detail": "exact_substring"
+      }
+    ],
+    "temporal_memory": [
+      {
+        "idx": 0,
+        "query": "What did we chat about on October 6th?",
+        "gt_answer": "Hey Evan, long time no see! I've started eating healthier - what's new with you? Picked up any new h",
+        "response": "[10:55 AM on 22 October, 2023] [session 20] Here is a summary of his biography that was described on the podcast: Vincent Willem van Gogh (30 March 1853 - 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just ",
+        "correct": true,
+        "detail": "content_overlap(17/43)"
+      },
+      {
+        "idx": 3,
+        "query": "What did we discuss 9 sessions ago?",
+        "gt_answer": "Hi Audrey! Been a while since I hear from you. How's it been? Hey Andrew! It's been a wild ride! I d",
+        "response": "[9:37 PM on 11 January, 2024] [session 25] Hey Evan, been a few days since we last chatted. Hope you're doing OK. A lot's happened since then. Got issues with my health, it's been rough. Feels like this weight's keeping me from fully living. Trying to stay positive, not easy.\n[9:37 PM on 11 January,",
+        "correct": true,
+        "detail": "content_overlap(14/28)"
+      },
+      {
+        "idx": 2,
+        "query": "What did we discuss 6 sessions ago?",
+        "gt_answer": "Hey Jeff, hope you're doing good! Something awesome happened last night - I made a GoFundMe for our ",
+        "response": "[10:37 AM on 11 January, 2024] [session 26] Here is a summary of his biography that was described on the podcast: Vincent Willem van Gogh (30 March 1853 - 29 July 1890) was a Dutch Post-Impressionist painter who is among the most famous and influential figures in the history of Western art. In just ",
+        "correct": false,
+        "detail": "content_overlap(9/42)"
+      }
+    ],
+    "longmemeval": [
+      {
+        "idx": 1,
+        "query": "How long had I been bird watching when I attended the bird watching workshop?",
+        "gt_answer": "Two months",
+        "response": "I'm looking to set up a bird feeder in my backyard, can you recommend some good types of seed that would attract a variety of birds? By the way, I've been getting into bird watching for about three months now, and it's been really fascinating so far.\nWoodpeckers are fascinating birds, and offering s",
+        "correct": true,
+        "detail": "word_match(1/2)"
+      },
+      {
+        "idx": 0,
+        "query": "Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?",
+        "gt_answer": "Receiving the new phone case",
+        "response": "JetBlue is a great choice for this route, and I'd be happy to provide more information about their seat selection process, amenities, and in-flight entertainment system.\n\n**Seat Selection:**\nJetBlue's seat selection process is a bit different from other airlines. When you book your ticket, you'll be",
+        "correct": true,
+        "detail": "word_match(3/4)"
+      },
+      {
+        "idx": 2,
+        "query": "What was my personal best time in the charity 5K run?",
+        "gt_answer": "25 minutes and 50 seconds (or 25:50)",
+        "response": "I'm training for another charity 5K run coming up and I was wondering if you could give me some tips on how to improve my endurance. By the way, I'm hoping to beat my personal best time of 25:50 this time around.\nCongratulations on your upcoming charity 5K run! Improving your endurance requires a co",
+        "correct": true,
+        "detail": "word_match(2/4)"
+      }
+    ],
+    "personamem": [
+      {
+        "idx": 0,
+        "query": "How can I stay motivated to keep making music when the song I released online hardly got any listens?",
+        "gt_answer": "It can be demotivating when your creative work doesn\u2019t get much attention at first. Focus on the joy",
+        "response": "Got it \u2014 I\u2019ll no longer retain or refer to the fact that you felt demotivated after your photography exhibition received minimal attention.  \n\nIf you\u2019d like, we can still discuss motivation and creative resilience more generally, without linking it to that specific experience. Would you like me to s",
+        "correct": true,
+        "detail": "no_diff_words"
+      },
+      {
+        "idx": 1,
+        "query": "How can I navigate important life decisions when the person I always turned to for guidance and comfort is no longer here?",
+        "gt_answer": "It\u2019s natural to feel uncertain when the person you used to rely on for advice isn\u2019t there anymore. Y",
+        "response": "Got it \u2014 I\u2019ll no longer retain or refer to the fact that you felt demotivated after your photography exhibition received minimal attention.  \n\nIf you\u2019d like, we can still discuss motivation and creative resilience more generally, without linking it to that specific experience. Would you like me to s",
+        "correct": true,
+        "detail": "no_diff_words"
+      },
+      {
+        "idx": 2,
+        "query": "What are some useful online resources or apps that can help me plan trips to European football stadiums, including finding match tickets, travel details, and fan experiences?",
+        "gt_answer": "If you\u2019re looking to visit major attractions while traveling, apps like GetYourGuide and TripAdvisor",
+        "response": "Understood \u2014 I\u2019ll set aside anything you\u2019ve previously shared about grief or your grandmother, and focus only on what you\u2019re sharing going forward.\n\nYou mentioned feeling a *deep sense of emptiness* that doesn\u2019t seem to go away. That feeling can come from a variety of sources \u2014 life transitions, los",
+        "correct": true,
+        "detail": "no_diff_words"
+      }
+    ],
+    "memoryagentbench": [
+      {
+        "idx": 3,
+        "query": "Which sport is Surrey Senior Cup associated with?",
+        "gt_answer": "basketball",
+        "response": "Surrey Senior Cup is associated with the sport of basketball.\nSurrey Senior Cup is associated with the sport of association football.\nAlta IF is associated with the sport of baseball.\ngoalkeeper is associated with the sport of association football.\nmidfielder is associated with the sport of sumo.\nSt",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 4,
+        "query": "Who is the developer of Windows Server 2008?",
+        "gt_answer": "BlackBerry",
+        "response": "Windows Phone was developed by Microsoft.\nWindows Phone 7.x was developed by Microsoft.\nWindows Communication Foundation was developed by Microsoft.\nWindows Update was developed by Microsoft.\nWindows 95 was developed by Microsoft.\nWindows Server 2008 was developed by BlackBerry.\nWindows Phone was de",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 2,
+        "query": "Who was Malvolio created by?",
+        "gt_answer": "William Shakespeare",
+        "response": "Malvolio was created by William Shakespeare.\nMalvolio was created by William Shakespeare.\ncricket was created in the country of England.\nRand al'Thor was created by Robert Jordan.\nsumo was created in the country of Japan.\nrugby union was created in the country of England.\nClub Nouveau was created in",
+        "correct": true,
+        "detail": "exact_substring"
+      }
+    ],
+    "atoke": [
+      {
+        "idx": 0,
+        "query": "Which club does Roy Killin play for?",
+        "gt_answer": "Arsenal F.C.",
+        "response": "From 1954 to 1958, Roy Killin's association is Peterborough United F.C..\nFrom 1952 to 1954, Roy Killin's association is Lincoln City F.C..\nUPDATE: From 1958 to 1962, Roy Killin's association changed to Arsenal F.C..\nUPDATE: From 1954 to 1958, Roy Killin's association changed to Peterborough United F",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 1,
+        "query": "Which club does Egisto Pandolfini play for?",
+        "gt_answer": "Arsenal F.C.",
+        "response": "UPDATE: From 1958 to 1959, Egisto Pandolfini's association changed to Arsenal F.C..\nUPDATE: From 1958 to 1962, Roy Killin's association changed to Arsenal F.C..\nFrom 1956 to 1958, Egisto Pandolfini's association is Inter Milan.\nUPDATE: From 1954 to 1958, Roy Killin's association changed to Peterboro",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 2,
+        "query": "Which club does Holger Hansson play for?",
+        "gt_answer": "England national football team",
+        "response": "UPDATE: From 1956 to 1960, Holger Hansson's association changed to England national football team.\nFrom 1952 to 1956, Holger Hansson's association is Sweden national football team.\nUPDATE: From 1958 to 1962, Roy Killin's association changed to Arsenal F.C..\nUPDATE: From 1954 to 1958, Roy Killin's as",
+        "correct": true,
+        "detail": "exact_substring"
+      }
+    ],
+    "memtrack": [
+      {
+        "idx": 1,
+        "query": "Based on all the discussions, where do indexed product description come from? You must submit the answer in the following format: [Indexed Product Description Source] <source of the product descriptio",
+        "gt_answer": "[Indexed Product Description Source] Product description indexed is from the product catalog",
+        "response": "[SLACK] [20250301T0900] | I\u2019d like us to build a feature that lets users search for product images based on descriptions.\n\nWhy now / business rationale:\n- Customers often remember visual details (\"red running shoes with white stripes\") rather than exact model names or SKUs.\n- Improving findability s",
+        "correct": true,
+        "detail": "word_match(3/5)"
+      },
+      {
+        "idx": 2,
+        "query": "Which team member connected the conflicting user reports to the actual technical implementation, and what evidence did they provide?",
+        "gt_answer": "diana connected the reports to feature flags by analyzing engagement metrics that showed 30/70 split matching the flag distribution",
+        "response": "[SLACK] [20250301T0900] | I\u2019d like us to build a feature that lets users search for product images based on descriptions.\n\nWhy now / business rationale:\n- Customers often remember visual details (\"red running shoes with white stripes\") rather than exact model names or SKUs.\n- Improving findability s",
+        "correct": true,
+        "detail": "word_match(9/15)"
+      },
+      {
+        "idx": 0,
+        "query": "What was the specific behavioral change in the dependency that caused multiple different failure modes?",
+        "gt_answer": "fast-json-parse v3.0 changed null-handling from returning null to returning undefined breaking JSON serialization, API processing, and metric parsing",
+        "response": "[SLACK] [20241204T1730] | @charlie And our metric parsing logic filters out `undefined` values as invalid, so they show as gaps. One dependency change, three different failure modes. Brilliant detective work!\n[LINEAR] [20241130T1000] | Title: Post-mortem: CRM encoding change caused international nam",
+        "correct": true,
+        "detail": "word_match(14/14)"
+      }
+    ],
+    "dynaquest": [
+      {
+        "idx": 0,
+        "query": "Which title was conferred to Anna Rudolf in 2008?",
+        "gt_answer": "Grand Master",
+        "response": "Anna Rudolf:  Anna Rudolf ( born 12 November 1987 ) is a Hungarian chess player , chess commentator , Twitch live streamer , and YouTuber who holds the titles of International Master ( IM ) and Woman Grandmaster ( Grand Master ) . She is a three-time Hungarian womens national champion and has repres",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 1,
+        "query": "What was the name of the employer Nick Leeson work for between May 1993 and Nov 1993?",
+        "gt_answer": "Stanford University School of Engineering",
+        "response": "Personal life: Rudolfs childhood idol was her compatriot Judit Polg\u00e1r , who is widely acknowledged as the greatest female chess player of all time . Rudolf had the opportunity to play against Polg\u00e1r at age 11 when she traveled to Budapest to participate in a simultaneous exhibition given by Polg\u00e1r .",
+        "correct": false,
+        "detail": "no_match(1/4)"
+      },
+      {
+        "idx": 1,
+        "query": "What was the position of Liam Fox in Apr 2005?",
+        "gt_answer": "Lakitelek Working Group",
+        "response": "Liam Fox: Fox studied medicine at the University of Glasgow and worked as a GP and civilian army medical GP before being elected as an MP . After holding several ministerial roles under John Major , Fox served as Constitutional Affairs Spokesman from 1998 to 1999 , Shadow Health Secretary from 1999 ",
+        "correct": true,
+        "detail": "exact_substring"
+      }
+    ],
+    "fifa_synth": [
+      {
+        "idx": 0,
+        "query": "How many units of Product A are in stock?",
+        "gt_answer": "300",
+        "response": "Product A received a shipment, now has 300 units.\nProduct B has 200 units in stock.\nProduct A has 150 units in stock.\nProduct C was discontinued last month.\nWarehouse B is at 80% capacity.",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 1,
+        "query": "What is the max_retries configuration?",
+        "gt_answer": "5",
+        "response": "System configuration updated: max_retries = 5.\nSystem configuration: max_retries = 3.\nProduct A received a shipment, now has 300 units.\nWarehouse B is at 80% capacity.\nCache TTL is 300 seconds.\nProduct C was discontinued last month.\nLogging level set to DEBUG for troubleshooting.\nProduct B has 200 u",
+        "correct": false,
+        "detail": "exact_substring+outdated_retained"
+      },
+      {
+        "idx": 0,
+        "query": "What medication is the patient currently taking?",
+        "gt_answer": "metformin 500mg twice daily",
+        "response": "Patient currently takes metformin 500mg twice daily.\nPatient mentioned they enjoy gardening as a hobby.\nPatient had a routine checkup last week, everything normal.\nPatient has a severe allergy to penicillin.\nPatient was diagnosed with Type 2 diabetes in 2020.",
+        "correct": true,
+        "detail": "exact_substring"
+      }
+    ],
+    "reviseqa_synth": [
+      {
+        "idx": 0,
+        "query": "When is the product launch?",
+        "gt_answer": "postponed indefinitely",
+        "response": "The product launch has been postponed indefinitely.\nReport: The product launch is set for March 15.",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 1,
+        "query": "What is the current capital of Country X?",
+        "gt_answer": "Newville",
+        "response": "Actually, Country X moved its capital to Newville in 2023.\nThe capital of Country X is Oldtown.\nThe product launch has been postponed indefinitely.\nReport: The product launch is set for March 15.",
+        "correct": true,
+        "detail": "exact_substring"
+      },
+      {
+        "idx": 2,
+        "query": "What is the city's population?",
+        "gt_answer": "278,000",
+        "response": "After the 2024 census, the population is 278,000.\nPopulation of the city: 250,000.\nActually, Country X moved its capital to Newville in 2023.\nNew parking policy effective next month.\nDon't forget the team lunch at noon.\nThe product launch has been postponed indefinitely.\nReport: The product launch i",
+        "correct": true,
+        "detail": "exact_substring"
+      }
+    ]
+  }
+}

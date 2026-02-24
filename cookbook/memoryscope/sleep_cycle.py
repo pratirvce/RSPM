@@ -88,12 +88,14 @@ class SleepCycle:
             conflicts = failure['conflicts']
             
             for conflict in conflicts:
-                rule_text = f"""[RULE: Do not use {conflict['old_value']} when user has updated to {conflict['new_value']}. 
+                old_stmt = conflict.get('old_statement', conflict.get('old_value', 'unknown'))
+                new_stmt = conflict.get('new_statement', conflict.get('new_value', 'unknown'))
+                rule_text = f"""[RULE: Do not use {conflict.get('old_value', old_stmt)} when user has updated to {conflict.get('new_value', new_stmt)}. 
 
 Always check for the most recent value in temporal contexts. 
 When user says "actually" or "now", they are updating previous information.
 
-Specifically: {conflict['old_statement']} was replaced by {conflict['new_statement']} at turn {conflict['new_turn']}.]"""
+Specifically: {old_stmt} was replaced by {new_stmt} at turn {conflict.get('new_turn', 'N/A')}.]"""
                 
                 rules.append({
                     "type": "negative_constraint",
@@ -115,12 +117,15 @@ Specifically: {conflict['old_statement']} was replaced by {conflict['new_stateme
             
             for conflict in conflicts:
                 # Step 1: Query for memories containing old value
+                old_stmt = conflict.get('old_statement', conflict.get('old_value', ''))
+                if not old_stmt:
+                    continue
                 response = requests.post(
                     f"{self.reme_url}/retrieve_task_memory",
                     json={
                         "workspace_id": self.workspace_id,
-                        "query": conflict['old_statement'],
-                        "top_k": 20  # Get candidates
+                        "query": old_stmt,
+                        "top_k": 20
                     }
                 )
                 

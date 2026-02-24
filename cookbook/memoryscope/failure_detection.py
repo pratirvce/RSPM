@@ -65,6 +65,18 @@ class TemporalConflictDetector:
                 if 'to' in conflict and 'new_value' not in conflict:
                     normalized['new_value'] = conflict['to']
                 
+                # Ensure old_statement/new_statement exist (used by sleep_cycle)
+                if 'old_statement' not in normalized:
+                    normalized['old_statement'] = normalized.get('old_value', '')
+                if 'new_statement' not in normalized:
+                    normalized['new_statement'] = normalized.get('new_value', '')
+                if 'type' not in normalized:
+                    normalized['type'] = normalized.get('field', 'ground_truth_update')
+                if 'old_turn' not in normalized:
+                    normalized['old_turn'] = 0
+                if 'new_turn' not in normalized:
+                    normalized['new_turn'] = 0
+                
                 normalized['confidence'] = 1.0
                 normalized['detection_method'] = 'ground_truth'
                 normalized_conflicts.append(normalized)
@@ -78,9 +90,9 @@ class TemporalConflictDetector:
         stage1_conflicts = self._detect_syntactic(messages)
         detected_conflicts.extend(stage1_conflicts)
         
-        # Stage 2: Semantic detection (TODO: implement with embeddings)
-        # stage2_conflicts = self._detect_semantic(messages)
-        # detected_conflicts.extend(stage2_conflicts)
+        # Stage 2: Semantic detection using TF-IDF similarity
+        stage2_conflicts = self._detect_semantic(messages)
+        detected_conflicts.extend(stage2_conflicts)
         
         # Stage 3: LLM verification (for high-confidence conflicts)
         # verified_conflicts = self._verify_with_llm(detected_conflicts, messages)
@@ -194,15 +206,77 @@ class TemporalConflictDetector:
     
     def _detect_semantic(self, messages: List[Dict]) -> List[Dict]:
         """
-        Stage 2: Semantic similarity-based detection
+        Stage 2: Semantic similarity-based detection using TF-IDF.
         
-        Uses embeddings to find semantically similar statements
-        that might contradict each other.
-        
-        TODO: Implement using ReMe's embedding service
+        Finds pairs of user messages that are topically similar but contain
+        different key values, indicating a potential update/contradiction.
         """
-        # Placeholder for semantic detection
-        return []
+        try:
+            from sklearn.feature_extraction.text import TfidfVectorizer
+            from sklearn.metrics.pairwise import cosine_similarity
+        except ImportError:
+            return []
+        
+        user_msgs = [
+            (i, msg) for i, msg in enumerate(messages) 
+            if msg.get('role') == 'user' and len(msg.get('content', '')) > 10
+        ]
+        if len(user_msgs) < 2:
+            return []
+        
+        contents = [msg['content'].lower() for _, msg in user_msgs]
+        try:
+            vec = TfidfVectorizer(max_features=3000, stop_words='english', ngram_range=(1, 2))
+            matrix = vec.fit_transform(contents)
+            sims = cosine_similarity(matrix)
+        except Exception:
+            return []
+        
+        conflicts = []
+        seen_pairs = set()
+        negation_markers = {'not', 'no longer', 'stopped', "don't", "doesn't", 'never',
+                            'quit', 'left', 'moved', 'switched', 'changed'}
+        
+        for i in range(len(user_msgs)):
+            for j in range(i + 1, len(user_msgs)):
+                if sims[i][j] < 0.3 or sims[i][j] > 0.95:
+                    continue
+                
+                pair_key = (user_msgs[i][0], user_msgs[j][0])
+                if pair_key in seen_pairs:
+                    continue
+                seen_pairs.add(pair_key)
+                
+                content_i = contents[i]
+                content_j = contents[j]
+                words_i = set(content_i.split())
+                words_j = set(content_j.split())
+                diff_words = (words_i ^ words_j) - {'a', 'an', 'the', 'i', 'is', 'am', 'my'}
+                
+                has_negation = any(m in content_j for m in negation_markers)
+                has_enough_diff = len(diff_words) >= 2
+                
+                if has_negation or (has_enough_diff and sims[i][j] > 0.4):
+                    idx_i, msg_i = user_msgs[i]
+                    idx_j, msg_j = user_msgs[j]
+                    
+                    old_unique = list(words_i - words_j)[:3]
+                    new_unique = list(words_j - words_i)[:3]
+                    
+                    if old_unique and new_unique:
+                        conflicts.append({
+                            "old_turn": msg_i.get('turn', idx_i),
+                            "new_turn": msg_j.get('turn', idx_j),
+                            "old_value": " ".join(old_unique),
+                            "new_value": " ".join(new_unique),
+                            "old_statement": msg_i.get('content', ''),
+                            "new_statement": msg_j.get('content', ''),
+                            "type": "semantic_change",
+                            "confidence": round(float(sims[i][j]) * 0.7, 2),
+                            "detection_method": "semantic"
+                        })
+        
+        return conflicts
     
     def _verify_with_llm(
         self, 
