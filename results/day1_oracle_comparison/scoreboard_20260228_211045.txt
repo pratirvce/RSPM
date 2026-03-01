@@ -1,0 +1,35 @@
+Day 1: Oracle vs No-Oracle Comparison Scoreboard
+==========================================================================================
+Date: 2026-02-28 21:10:45
+Total Time: 122s
+
+Dataset            Split        Config            Items      TCS   Accuracy   Goal
+--------------------------------------------------------------------------------
+halumem            dev          NaiveRAG             10  100.0%    100.0%   PASS
+halumem            dev          RSPM-NoOracle        10  100.0%    100.0%   PASS
+halumem            dev          RSPM-Oracle          10  100.0%    100.0%   PASS
+halumem            test         NaiveRAG             10  100.0%    100.0%   PASS
+halumem            test         RSPM-NoOracle        10  100.0%    100.0%   PASS
+halumem            test         RSPM-Oracle          10  100.0%    100.0%   PASS
+atoke              dev          NaiveRAG             10  100.0%    100.0%   PASS
+atoke              dev          RSPM-NoOracle        10  100.0%    100.0%   PASS
+atoke              dev          RSPM-Oracle          10   87.5%     90.0%   FAIL
+atoke              test         NaiveRAG             10  100.0%    100.0%   PASS
+atoke              test         RSPM-NoOracle        10  100.0%    100.0%   PASS
+atoke              test         RSPM-Oracle          10  100.0%    100.0%   PASS
+locomo             dev          NaiveRAG             10   50.0%     50.0%   FAIL
+locomo             dev          RSPM-NoOracle        10   50.0%     50.0%   FAIL
+locomo             dev          RSPM-Oracle          10   50.0%     50.0%   FAIL
+locomo             test         NaiveRAG             10   90.0%     90.0%   FAIL
+locomo             test         RSPM-NoOracle        10   70.0%     70.0%   FAIL
+locomo             test         RSPM-Oracle          10   80.0%     80.0%   FAIL
+personamem         dev          NaiveRAG             10  100.0%     80.0%   PASS
+personamem         dev          RSPM-NoOracle        10  100.0%     80.0%   PASS
+personamem         dev          RSPM-Oracle          10  100.0%     80.0%   PASS
+personamem         test         NaiveRAG             10  100.0%     90.0%   PASS
+personamem         test         RSPM-NoOracle        10  100.0%     90.0%   PASS
+personamem         test         RSPM-Oracle          10  100.0%     90.0%   PASS
+
+================================================================================
+OVERALL: Avg TCS = 90.7% | Avg Accuracy = 87.1%
+Goal (>95%): NOT YET

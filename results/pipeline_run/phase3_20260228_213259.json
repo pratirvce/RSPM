@@ -1,0 +1,140 @@
+{
+  "phase": "Phase 3: Proactive Reconciliation",
+  "elapsed_seconds": 515.1900415420532,
+  "results": [
+    {
+      "dataset": "halumem",
+      "split": "dev",
+      "config": "RSPM-Proactive",
+      "total_items": 10,
+      "success": 10,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 24.9,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 10,
+      "incorrect": 0,
+      "temporal_conflicts": 10,
+      "correct_conflicts": 10
+    },
+    {
+      "dataset": "halumem",
+      "split": "test",
+      "config": "RSPM-Proactive",
+      "total_items": 10,
+      "success": 10,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 28.6,
+      "tcs": 1.0,
+      "overall_accuracy": 1.0,
+      "correct": 10,
+      "incorrect": 0,
+      "temporal_conflicts": 10,
+      "correct_conflicts": 10
+    },
+    {
+      "dataset": "atoke",
+      "split": "dev",
+      "config": "RSPM-Proactive",
+      "total_items": 10,
+      "success": 9,
+      "errors": 1,
+      "error_samples": [
+        "'NoneType' object has no attribute 'lower'\n       ^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/prevanka/prati/su-reme/ReMe/cookbook/memoryscope/failure_detection.py\", line 197, in is_failure\n    old_val = conflict['old_value'].lower()\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'lower'\n"
+      ],
+      "elapsed_seconds": 24.3,
+      "tcs": 0.8571428571428571,
+      "overall_accuracy": 0.8888888888888888,
+      "correct": 8,
+      "incorrect": 1,
+      "temporal_conflicts": 7,
+      "correct_conflicts": 6
+    },
+    {
+      "dataset": "atoke",
+      "split": "test",
+      "config": "RSPM-Proactive",
+      "total_items": 10,
+      "success": 9,
+      "errors": 1,
+      "error_samples": [
+        "'NoneType' object has no attribute 'lower'\n       ^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/prevanka/prati/su-reme/ReMe/cookbook/memoryscope/failure_detection.py\", line 197, in is_failure\n    old_val = conflict['old_value'].lower()\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'lower'\n"
+      ],
+      "elapsed_seconds": 23.7,
+      "tcs": 1.0,
+      "overall_accuracy": 0.6666666666666666,
+      "correct": 6,
+      "incorrect": 3,
+      "temporal_conflicts": 3,
+      "correct_conflicts": 3
+    },
+    {
+      "dataset": "locomo",
+      "split": "dev",
+      "config": "RSPM-Proactive",
+      "total_items": 10,
+      "success": 10,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 24.2,
+      "tcs": 0.5,
+      "overall_accuracy": 0.5,
+      "correct": 5,
+      "incorrect": 5,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "locomo",
+      "split": "test",
+      "config": "RSPM-Proactive",
+      "total_items": 10,
+      "success": 10,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 20.0,
+      "tcs": 0.7,
+      "overall_accuracy": 0.7,
+      "correct": 7,
+      "incorrect": 3,
+      "temporal_conflicts": 0,
+      "correct_conflicts": 0
+    },
+    {
+      "dataset": "personamem",
+      "split": "dev",
+      "config": "RSPM-Proactive",
+      "total_items": 10,
+      "success": 10,
+      "errors": 0,
+      "error_samples": [],
+      "elapsed_seconds": 18.8,
+      "tcs": 1.0,
+      "overall_accuracy": 0.8,
+      "correct": 8,
+      "incorrect": 2,
+      "temporal_conflicts": 8,
+      "correct_conflicts": 8
+    },
+    {
+      "dataset": "personamem",
+      "split": "test",
+      "config": "RSPM-Proactive",
+      "total_items": 10,
+      "success": 9,
+      "errors": 1,
+      "error_samples": [
+        "'NoneType' object has no attribute 'lower'\n       ^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/prevanka/prati/su-reme/ReMe/cookbook/memoryscope/failure_detection.py\", line 198, in is_failure\n    new_val = conflict['new_value'].lower()\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'lower'\n"
+      ],
+      "elapsed_seconds": 349.6,
+      "tcs": 1.0,
+      "overall_accuracy": 0.8888888888888888,
+      "correct": 8,
+      "incorrect": 1,
+      "temporal_conflicts": 7,
+      "correct_conflicts": 7
+    }
+  ]
+}

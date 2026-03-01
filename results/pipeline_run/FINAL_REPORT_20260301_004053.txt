@@ -1,0 +1,67 @@
+==========================================================================================
+RSPM PIPELINE — FINAL COMPARISON REPORT
+Generated: 2026-03-01 00:40:53
+==========================================================================================
+
+## Per-Configuration Averages (across all datasets & splits)
+
+Config                  Avg TCS    Avg Acc    Items  Correct
+------------------------------------------------------------
+NaiveRAG                 80.6%     77.6%      401      315
+RSPM-Auto                79.5%     77.2%      401      313
+RSPM-LLMDetect           92.5%     83.2%       80       65
+RSPM-Oracle              88.4%     85.0%       80       68
+RSPM-Proactive           80.2%     76.4%      401      306
+
+## Per-Dataset Averages (across all configs & splits)
+
+Dataset                 Avg TCS    Avg Acc    Items
+----------------------------------------------------
+atoke                    95.9%     89.9%      190
+dynaquest                50.8%     48.8%       48
+fifa_synth               63.1%     60.6%       51
+halumem                  99.2%     99.2%      190
+locomo                   65.8%     65.8%      190
+longmemeval             100.0%     92.2%       90
+memoryagentbench         48.9%     48.9%       90
+memtrack                 91.0%     91.0%       87
+personamem              100.0%     85.9%      190
+reviseqa_synth           74.4%     75.3%       57
+temporal_memory          55.6%     55.6%       90
+timebench                76.7%     76.7%       90
+
+## TCS Matrix: Dataset × Configuration
+
+Dataset                       NaiveRAG         RSPM-Auto    RSPM-LLMDetect       RSPM-Oracle    RSPM-Proactive
+--------------------------------------------------------------------------------------------------------------
+atoke                           97.7%           100.0%           100.0%            93.8%            88.9%
+dynaquest                       52.3%            52.3%                 —                 —            47.7%
+fifa_synth                      64.3%            64.3%                 —                 —            60.7%
+halumem                         98.3%           100.0%           100.0%           100.0%            98.3%
+locomo                          67.5%            64.2%            70.0%            60.0%            66.7%
+longmemeval                    100.0%           100.0%                 —                 —           100.0%
+memoryagentbench                43.3%            50.0%                 —                 —            53.3%
+memtrack                        89.8%            89.8%                 —                 —            93.3%
+personamem                     100.0%           100.0%           100.0%           100.0%           100.0%
+reviseqa_synth                  73.2%            73.2%                 —                 —            76.8%
+temporal_memory                 63.3%            36.7%                 —                 —            66.7%
+timebench                       76.7%            76.7%                 —                 —            76.7%
+
+## Formal TCS Guarantee Analysis
+------------------------------------------------------------
+  NaiveRAG             mean=0.806  std=0.199  95%CI=[0.737, 0.875]
+  RSPM-Auto            mean=0.795  std=0.227  95%CI=[0.716, 0.873]
+  RSPM-LLMDetect       mean=0.925  std=0.139  95%CI=[0.829, 1.021]
+  RSPM-Oracle          mean=0.884  std=0.176  95%CI=[0.762, 1.007]
+  RSPM-Proactive       mean=0.802  std=0.188  95%CI=[0.737, 0.867]
+
+  Proactive TCS Bound: TCS >= 1 - (1 - precision) * conflict_rate
+    precision = 0.837
+    conflict_rate = 0.566
+    Theoretical TCS >= 0.908
+
+==========================================================================================
+OVERALL: Avg TCS = 81.6% | Avg Accuracy = 78.1%
+Total evaluations: 112 | Total items: 1363
+Goal (>95% TCS): NOT YET
+==========================================================================================

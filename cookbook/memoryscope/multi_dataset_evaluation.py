@@ -47,43 +47,73 @@ from metrics import MemoryScopeMetrics
 REME_URL = "http://localhost:8002"
 MAX_WORKERS = 5          # Parallel workers per dataset
 SPLITS_DIR = Path("datasets/splits")
-RESULTS_DIR = Path("results/multi_dataset_v4_12ds")
+RESULTS_DIR = Path("results/day1_oracle_comparison")
 
-# Limits per split (for time management with DeepSeek-R1)
+# Limits per split — keep small for budget-conscious Day 1 run
 LIMITS = {
-    "dev": 20,
-    "validation": 20,
-    "test": 20
+    "dev": 10,
+    "validation": 10,
+    "test": 10
 }
 
 # Which splits to evaluate
-EVAL_SPLITS = ["dev", "validation", "test"]
+EVAL_SPLITS = ["dev", "test"]
 
-# Datasets to evaluate (12 total)
+# Datasets to evaluate — representative subset for Day 1 comparison
+# halumem: core benchmark (temporal updates)
+# atoke: knowledge editing (temporal consistency)
+# locomo: long-context retrieval (reasoning)
+# personamem: preference tracking (dynamic profiles)
 DATASETS = [
-    "halumem", "locomo", "timebench", "temporal_memory",
-    "longmemeval", "personamem", "memoryagentbench",
-    "atoke", "memtrack", "dynaquest", "fifa_synth", "reviseqa_synth"
+    "halumem", "atoke", "locomo", "personamem",
 ]
 
 # DeepSeek API key for LLM generation
 DEEPSEEK_API_KEY = os.environ.get('DEEPSEEK_API_KEY') or os.environ.get('FLOW_LLM_API_KEY', 'sk-1bdb6f5137694533a8084459f655e28a')
 
-# RSPM Configurations
+# Shared LLM params
+_LLM_PARAMS = {
+    "llm_model": "deepseek-chat",
+    "llm_api_key": DEEPSEEK_API_KEY,
+    "llm_base_url": "https://api.deepseek.com",
+    "reme_url": REME_URL,
+}
+
+# RSPM Configurations — run all three for honest comparison
 RSPM_CONFIGS = [
     {
-        "name": "RSPM-LLM",
+        "name": "NaiveRAG",
         "params": {
             "sleep_frequency": 99999,
             "enable_hierarchical": False,
+            "enable_reranking": False,
+            "enable_llm_generation": True,
+            "oracle_mode": False,
+            **_LLM_PARAMS,
+        }
+    },
+    {
+        "name": "RSPM-NoOracle",
+        "params": {
+            "sleep_frequency": 99999,
+            "enable_hierarchical": True,
             "enable_reranking": True,
             "enable_llm_generation": True,
-            "llm_model": "deepseek-chat",
-            "llm_api_key": DEEPSEEK_API_KEY,
-            "llm_base_url": "https://api.deepseek.com",
-            "reme_url": REME_URL
+            "oracle_mode": False,
+            **_LLM_PARAMS,
         }
-    }
+    },
+    {
+        "name": "RSPM-Oracle",
+        "params": {
+            "sleep_frequency": 99999,
+            "enable_hierarchical": True,
+            "enable_reranking": True,
+            "enable_llm_generation": True,
+            "oracle_mode": True,
+            **_LLM_PARAMS,
+        }
+    },
 ]
 
 # Common stop words for matching
@@ -941,7 +971,7 @@ def evaluate_dataset_split(
 # ============================================================
 def main():
     print("=" * 90)
-    print("MULTI-DATASET PARALLEL RSPM EVALUATION (v4 - 12 Datasets)")
+    print("DAY 1: ORACLE vs NO-ORACLE COMPARISON")
     print("=" * 90)
     print(f"Start Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"ReMe URL:   {REME_URL}")
@@ -1106,7 +1136,7 @@ def main():
     
     results_payload = {
         "timestamp": timestamp,
-        "version": "v4_12_datasets",
+        "version": "day1_oracle_comparison",
         "start_time": datetime.now().isoformat(),
         "total_elapsed_seconds": round(global_elapsed, 1),
         "configuration": {
@@ -1139,7 +1169,7 @@ def main():
     # Scoreboard
     scoreboard_file = RESULTS_DIR / f"scoreboard_{timestamp}.txt"
     with open(scoreboard_file, 'w') as f:
-        f.write("RSPM Multi-Dataset Evaluation Scoreboard (v4 - 12 Datasets)\n")
+        f.write("Day 1: Oracle vs No-Oracle Comparison Scoreboard\n")
         f.write(f"{'=' * 90}\n")
         f.write(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write(f"Total Time: {global_elapsed:.0f}s\n\n")

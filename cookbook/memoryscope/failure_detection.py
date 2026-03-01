@@ -9,6 +9,8 @@ This module implements sophisticated conflict detection to achieve >95% TCS:
 Target: >95% conflict detection accuracy
 """
 import re
+import json
+import time
 from typing import List, Dict, Optional, Tuple
 import requests
 
@@ -293,6 +295,126 @@ class TemporalConflictDetector:
         """
         # Placeholder for LLM verification
         return candidate_conflicts
+
+
+class LLMConflictDetector:
+    """
+    LLM-based temporal conflict detection.
+    Uses an LLM to identify when new information supersedes old information
+    in a conversation, replacing oracle ground-truth dependency.
+    """
+
+    def __init__(self, llm_client, model: str = "deepseek-chat"):
+        self.client = llm_client
+        self.model = model
+
+    def _call_llm(self, prompt: str, max_tokens: int = 500) -> str:
+        for attempt in range(3):
+            try:
+                resp = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=max_tokens,
+                    temperature=0.0,
+                )
+                return resp.choices[0].message.content.strip()
+            except Exception as e:
+                if "rate" in str(e).lower() or "429" in str(e):
+                    time.sleep(2 ** attempt)
+                    continue
+                return ""
+        return ""
+
+    def detect_conflicts(self, messages: List[Dict]) -> List[Dict]:
+        """Detect temporal conflicts in a conversation using LLM analysis."""
+        user_msgs = [
+            (i, m) for i, m in enumerate(messages)
+            if m.get('role') == 'user' and len(str(m.get('content', ''))) > 10
+        ]
+        if len(user_msgs) < 2:
+            return []
+
+        conv_lines = []
+        for idx, msg in user_msgs[-30:]:
+            turn = msg.get('turn', idx)
+            content = str(msg.get('content', ''))[:200]
+            conv_lines.append(f"Turn {turn}: {content}")
+        conv_text = "\n".join(conv_lines)
+
+        prompt = (
+            "Analyze this conversation for information updates where a later "
+            "message changes, corrects, or replaces information from an earlier message.\n\n"
+            f"Conversation:\n{conv_text}\n\n"
+            "For each update found, output one JSON object per line:\n"
+            '{"old_turn": N, "new_turn": N, "old_value": "...", "new_value": "...", "field": "topic"}\n\n'
+            "If no updates found, output exactly: NONE"
+        )
+
+        text = self._call_llm(prompt, max_tokens=500)
+        if not text or text.upper().startswith("NONE"):
+            return []
+
+        conflicts = []
+        for line in text.split('\n'):
+            line = line.strip()
+            if not line.startswith('{'):
+                continue
+            try:
+                c = json.loads(line)
+                c.setdefault('confidence', 0.85)
+                c.setdefault('detection_method', 'llm')
+                c.setdefault('old_statement', c.get('old_value', ''))
+                c.setdefault('new_statement', c.get('new_value', ''))
+                c.setdefault('type', c.get('field', 'llm_detected'))
+                conflicts.append(c)
+            except json.JSONDecodeError:
+                continue
+        return conflicts
+
+    def find_superseded_memories(
+        self, documents: List[str], statuses: Optional[List[str]] = None
+    ) -> List[int]:
+        """
+        Given stored memory documents, identify which contain outdated information
+        superseded by later entries. Returns indices to archive.
+        """
+        if len(documents) < 2:
+            return []
+
+        if statuses:
+            active = [(i, d) for i, (d, s) in enumerate(zip(documents, statuses))
+                      if s == 'active']
+        else:
+            active = list(enumerate(documents))
+
+        if len(active) < 2:
+            return []
+
+        recent = active[-40:]
+        docs_text = "\n".join(f"[{i}] {d[:150]}" for i, d in recent)
+
+        prompt = (
+            "Review these memory entries from a conversation. Identify entries that "
+            "contain OUTDATED information that was later UPDATED or REPLACED by a "
+            "subsequent entry.\n\n"
+            f"Entries:\n{docs_text}\n\n"
+            "Output comma-separated indices of OUTDATED entries only (e.g. 2,5,8).\n"
+            "Only mark an entry as outdated if a LATER entry clearly replaces its info.\n"
+            "If no entries are outdated, output: NONE"
+        )
+
+        text = self._call_llm(prompt, max_tokens=100)
+        if not text or text.upper().startswith("NONE"):
+            return []
+
+        indices = []
+        for part in re.sub(r'[^\d,]', '', text).split(','):
+            part = part.strip()
+            if part.isdigit():
+                idx = int(part)
+                if 0 <= idx < len(documents):
+                    indices.append(idx)
+        return indices
 
 
 # Test the detector

@@ -28,7 +28,7 @@ import re
 import math
 import numpy as np
 from typing import List, Dict, Optional, Tuple, Union
-from failure_detection import TemporalConflictDetector
+from failure_detection import TemporalConflictDetector, LLMConflictDetector
 from sleep_cycle import SleepCycle
 from data_loader import MemoryScopeDataset
 from metrics import MemoryScopeMetrics
@@ -103,6 +103,7 @@ class LocalMemoryStore:
         self.timestamps = []
         self.scores = []
         self.turn_indices = []
+        self.statuses = []
         self._embeddings = None
         self._dirty = True
         # BM25 state
@@ -123,7 +124,17 @@ class LocalMemoryStore:
         self.turn_indices.append(turn_idx)
         recency_boost = 1.0 + (turn_idx * 0.01)
         self.scores.append(score * recency_boost)
+        self.statuses.append('active')
         self._dirty = True
+
+    def archive(self, indices: list):
+        """Mark documents at given indices as archived (excluded from retrieval)."""
+        for idx in indices:
+            if 0 <= idx < len(self.statuses):
+                self.statuses[idx] = 'archived'
+
+    def active_count(self) -> int:
+        return sum(1 for s in self.statuses if s == 'active')
 
     def store_messages(self, messages: List[Dict], score: float = 1.0):
         """Store a batch of messages as individual memory entries."""
@@ -230,6 +241,8 @@ class LocalMemoryStore:
                 'idx': idx,
             })
 
+        if self.statuses:
+            results = [r for r in results if self.statuses[r['idx']] == 'active']
         results.sort(key=lambda x: x['combined_score'], reverse=True)
         return results[:top_k]
 
@@ -247,6 +260,7 @@ class LocalMemoryStore:
         self.timestamps = []
         self.scores = []
         self.turn_indices = []
+        self.statuses = []
         self._embeddings = None
         self._dirty = True
         self._idf = None
@@ -319,6 +333,8 @@ class LocalMemoryStore:
                         'who', 'where', 'when', 'how', 'do', 'does', 'did', 'my'}
         results = []
         for idx, doc in enumerate(self.documents):
+            if self.statuses and self.statuses[idx] != 'active':
+                continue
             doc_lower = doc.lower()
             matches = sum(1 for w in query_words if w in doc_lower)
             if matches > 0:
@@ -356,6 +372,9 @@ class RSPMAgent:
         enable_hierarchical: bool = True,
         enable_reranking: bool = True,
         enable_llm_generation: bool = False,
+        oracle_mode: bool = True,
+        conflict_mode: str = None,
+        proactive: bool = False,
         llm_model: str = "deepseek-chat",
         llm_api_key: str = None,
         llm_base_url: str = "https://api.deepseek.com",
@@ -366,25 +385,41 @@ class RSPMAgent:
         self.enable_hierarchical = enable_hierarchical
         self.enable_reranking = enable_reranking
         self.enable_llm_generation = enable_llm_generation
-        
+        self.oracle_mode = oracle_mode
+        self.proactive = proactive
+
+        # conflict_mode: "none" | "auto" | "llm" | "oracle"
+        # If not set explicitly, derive from oracle_mode for backward compat
+        if conflict_mode is not None:
+            self.conflict_mode = conflict_mode
+        else:
+            self.conflict_mode = "oracle" if oracle_mode else "auto"
+
         # Components
         self.detector = TemporalConflictDetector(reme_url)
         self.sleep_cycle = SleepCycle(
             workspace_id=workspace_id,
             sleep_frequency=sleep_frequency
         )
-        
-        # LOCAL memory store (replaces ReMe vector store)
+
+        # LOCAL memory store
         self.memory_store = LocalMemoryStore()
-        
-        # LLM client for answer generation
+
+        # LLM client — shared for answer generation and LLM-based detection
         self.llm_client = None
         self.llm_model = llm_model
-        if enable_llm_generation and HAS_OPENAI:
-            api_key = llm_api_key or os.environ.get('DEEPSEEK_API_KEY') or os.environ.get('FLOW_LLM_API_KEY', '')
-            if api_key:
-                self.llm_client = OpenAI(api_key=api_key, base_url=llm_base_url)
-        
+        api_key = llm_api_key or os.environ.get('DEEPSEEK_API_KEY') or os.environ.get('FLOW_LLM_API_KEY', '')
+        if HAS_OPENAI and api_key:
+            self.llm_client = OpenAI(api_key=api_key, base_url=llm_base_url)
+
+        # LLM-based conflict detector (used when conflict_mode="llm" or proactive=True)
+        self.llm_detector = None
+        if self.llm_client and self.conflict_mode == "llm":
+            self.llm_detector = LLMConflictDetector(self.llm_client, llm_model)
+        if self.llm_client and self.proactive:
+            if self.llm_detector is None:
+                self.llm_detector = LLMConflictDetector(self.llm_client, llm_model)
+
         # Tracking
         self.task_count = 0
         self.conversation_history = []
@@ -436,50 +471,55 @@ class RSPMAgent:
                 query = "Please respond based on the conversation."
         
         self.task_count += 1
-        
-        # Step 1: Detect conflicts
-        conflicts = self.detector.detect_conflicts(
-            messages,
-            {"conflicts": ground_truth_conflicts} if ground_truth_conflicts else None
-        )
-        
+
+        # Step 1: Detect conflicts based on conflict_mode
+        if self.conflict_mode == "oracle" and ground_truth_conflicts:
+            conflicts = self.detector.detect_conflicts(
+                messages, {"conflicts": ground_truth_conflicts}
+            )
+        elif self.conflict_mode == "llm" and self.llm_detector:
+            conflicts = self.llm_detector.detect_conflicts(messages)
+        elif self.conflict_mode == "auto":
+            conflicts = self.detector.detect_conflicts(messages, None)
+        else:
+            conflicts = []
+
         # Step 2: Add temporal metadata
         messages_with_metadata = self._add_temporal_metadata(messages)
-        
+
         # Step 3: Store messages in LOCAL memory store
         if self.enable_hierarchical:
             self._store_hierarchical_local(messages_with_metadata)
         else:
             self._store_standard_local(messages_with_metadata)
-        
+
+        # Step 3b: Proactive reconciliation — archive superseded memories
+        if self.proactive and self.llm_detector:
+            self._reconcile_memories()
+
         # Step 4: Retrieve from LOCAL memory store
-        if self.enable_reranking:
+        if self.enable_reranking and not self.proactive:
             retrieved_context = self._retrieve_with_reranking_local(query, conflicts)
         else:
             retrieved_context = self._retrieve_standard_local(query)
-        
+
         # Step 5: Generate answer using LLM (if enabled)
-        # Hybrid approach: LLM answer + raw context for robust evaluation matching
         if self.enable_llm_generation and self.llm_client:
             llm_answer = self._generate_answer(query, retrieved_context, conflicts)
-            # Combine LLM answer with raw context so evaluation can match against both
             agent_response = f"{llm_answer}\n\n{retrieved_context}"
         else:
             agent_response = retrieved_context
-        
+
         # Step 6: Check for failure
         is_failure, triggered_conflicts = self.detector.is_failure(
-            agent_response, 
-            conflicts
+            agent_response, conflicts
         )
-        
+
         # Step 7: Record task and trigger sleep if needed
         self.sleep_cycle.record_task(messages, conflicts, is_failure)
-        
         if self.sleep_cycle.should_sleep():
-            print(f"  [Task {self.task_count}] Triggering sleep cycle...")
             self.sleep_cycle.execute_sleep_cycle()
-        
+
         return agent_response, conflicts
     
     def evaluate_response(self, agent_response: str, ground_truth: Dict) -> Dict:
@@ -619,6 +659,20 @@ Answer:"""
         except Exception:
             return context
     
+    def _reconcile_memories(self):
+        """
+        Proactive write-time reconciliation: ask LLM to identify superseded
+        memories and archive them so they are excluded from retrieval.
+        """
+        store = self.memory_store
+        if len(store.documents) < 2:
+            return
+        superseded = self.llm_detector.find_superseded_memories(
+            store.documents, store.statuses
+        )
+        if superseded:
+            store.archive(superseded)
+
     def _add_temporal_metadata(self, messages: List[Dict]) -> List[Dict]:
         """Add temporal metadata to messages"""
         current_time = time.time()
